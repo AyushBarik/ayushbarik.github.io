@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes & Books - Ayush Barik</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* NEW RULE ADDED HERE to allow the main page container to be wider */
+    .main-wrapper {
+        max-width: 89%; /* Allows .main-wrapper to use full available screen width */
+    }
+
+    /* Page content area - Dark Theme */
+    .main-wrapper .content {
+      background-color: #121212; /* Very dark gray (near black) for the page */
+      color: #e0e0e0; /* Light text for dark background */
+      padding: 20px 15px;
+    }
+
+    .main-wrapper .content h1 {
+        color: #f5f5f5; /* Brighter white for H1 */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .main-wrapper .content .table-description {
+        color: #b0b0b0; /* Lighter gray for description */
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+    }
+
+    /* Layout container for table and sidebar */
+    .course-layout-container {
+        display: flex;
+        flex-wrap: nowrap; /* Keeps table and notes side-by-side */
+        gap: 25px;
+        /* max-width: 1900px; */ /* Original max-width was commented out or removed - good */
+        max-width: 100%;   /* ADDED/MODIFIED: Ensures this container uses the full width of its parent */
+        margin: 0 auto;
+    }
+
+    .table-area {
+        flex-grow: 3;      /* Allow it to grow to take 3 parts of available space */
+        flex-shrink: 1;    /* Allow it to shrink if needed */
+        flex-basis: 0;     /* Start with a basis of 0, letting grow define its size */
+        min-width: 0;      /* Crucial for flex items: allows them to shrink below their content's intrinsic minimum size */
+        overflow-x: auto;  /* Fallback for table scroll if content is still excessively wide */
+    }
+
+    .sidebar-notes-area {
+        flex: 1;
+        min-width: 220px;
+        padding-top: 0;
+    }
+    
+    .sidebar-notes-area h3 {
+        font-size: 1.2em;
+        color: #e0e0e0;
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #444; /* Lighter border for dark theme */
+        padding-bottom: 8px;
+    }
+
+    .sidebar-notes-area .color-legend,
+    .sidebar-notes-area .gpa-display {
+        margin-bottom: 20px;
+        font-size: 0.85em;
+        line-height: 1.6;
+        color: #b0b0b0; /* Lighter gray for notes text */
+    }
+    .sidebar-notes-area .gpa-display {
+        font-weight: bold;
+        font-size: 0.9em;
+        color: #e0e0e0; /* Brighter for GPA */
+    }
+    .sidebar-notes-area .color-legend span[style*="color"] {
+        font-weight: bold;
+        padding: 0 2px;
+    }
+
+
+    /* Table Styles - Dark Theme */
+    .course-schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #1e1e1e; /* Dark background for the table */
+      color: #dcdcdc; /* Default light text for table content */
+      font-size: 0.9em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adjusted shadow for dark */
+    }
+
+    .course-schedule-table th, .course-schedule-table td {
+      border: 1px solid #444; /* Lighter gray borders (not pure white, which can be too harsh) */
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .course-schedule-table thead th {
+      background-color: #2a2a2a; /* Slightly different dark shade for headers */
+      color: #f5f5f5; /* Bright white for header text */
+      font-weight: bold;
+      text-align: center;
+    }
+    .course-schedule-table tbody td:first-child { /* Semester column */
+        font-weight: bold;
+        background-color: #252525; /* Distinct dark shade for semester */
+        color: #e0e0e0;
+    }
+    .course-schedule-table tbody td:last-child { /* Total Credits column */
+        text-align: center;
+        font-weight: bold;
+        color: #e0e0e0;
+    }
+
+    /* Your Custom Text Color Classes (10-point spectrum) */
+    .text-rating-1  { color: #8B0000; font-weight: bold; }
+    .text-rating-2  { color: #A62900; font-weight: bold; }
+    .text-rating-3  { color: #C25200; font-weight: bold; }
+    .text-rating-4  { color: #DE7B00; font-weight: bold; }
+    .text-rating-5  { color: #FFFF00; font-weight: bold; }
+    .text-rating-6  { color: #CCFF00; font-weight: bold; }
+    .text-rating-7  { color: #99FF00; font-weight: bold; }
+    .text-rating-8  { color: #66FF00; font-weight: bold; }
+    .text-rating-9  { color: #00D100; font-weight: bold; }
+    .text-rating-10 { color: #28a745; font-weight: bold; }
+    .none { color: #ffffff; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo"> Ayush Barik </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="classesnbooks.html">Classes & Books</a></li> </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <main class="content">
+      <h1>Academic Schedule</h1>
+      <p class="table-description">
+  
+      </p>
+      
+      <div class="course-layout-container">
+        <div class="table-area">
+          <table class="course-schedule-table">
+            <thead>
+              <tr>
+                <th>Year Semester</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Freshman Fall (2023)</td>
+                <td><span class="text-rating-8">ECE 120 (Introduction to Computing)</span></td>
+                <td><span class="text-rating-6">MATH 285 (Intro Differential Equations)</span></td>
+                <td><span class="text-rating-8">MATH 213 (Basic Discrete Mathematics)</span></td>
+                <td><span class="text-rating-5">ENG 100 (Engineering Orientation)</span></td>
+                <td><span class="text-rating-5">ENG 177 (GFX Career Scholars)</span></td> 
+                <td><span class="text-rating-8">REL 108 (Religion & Society in West I)</span></td>
+              </tr>
+
+              <tr>
+                <td>Freshman Spring (2024)</td>
+                <td><span class="text-rating-3">ECE 110 (Introduction to Electronics)</span></td>
+                <td><span class="text-rating-6">ECE 220 (Computer Systems & Programming)</span></td>
+                <td><span class="text-rating-7">MATH 257 (Linear Algebra w/ Computational Applications)</span></td>
+                <td><span class="text-rating-5">PHYS 213 (Thermal Physics)</span></td> 
+                <td><span class="text-rating-5">PHYS 214 (Quantum Physics)</span></td> 
+                <td><span class="text-rating-5">ENG 177 (GFX Career Scholars)</span></td> 
+              </tr>
+              
+              <tr>
+                <td>Sophomore Fall (2024)</td>
+                <td><span class="text-rating-6">CS 225 (Data Structures)</span></td>
+                <td><span class="text-rating-7">ECE 313 (Probability with Engineering Applications)</span></td>
+                <td><span class="text-rating-7">ECE 210 (Analog Signal Processing)</span></td>
+                <td><span class="text-rating-4">ARTJ 301 (Manga: The Art of Image and Word)</span></td>
+                <td><span class="text-rating-4">HKN 271 (Health Equity in the United States)</span></td> 
+                <td><span class="text-rating-5">ENG 199 (URSA Program)</span></td>     
+              </tr>
+
+              <tr>
+                <td>Sophomore Spring (2025)</td>
+                <td><span class="text-rating-6">ECE 385 (Digital Systems Laboratory)</span></td>
+                <td><span class="text-rating-10">CS 444 / ECE 494 (Deep Learning for Computer Vision)</span></td>
+                <td><span class="text-rating-8">ECE 364 (Programming Methods for Machine Learning)</span></td>
+                <td><span class="text-rating-6">ECE 498BH (LLM Reasoning for Engineering)</span></td>
+                <td><span class="text-rating-5">ASTR 330 (Extraterrestrial Life)</span></td> 
+                <td><span class="text-rating-4">RST 242 (Nature and American Culture)</span></td>     
+              </tr>
+
+              <tr>
+                <td>Junior Fall (2025)</td>
+                <td><span class="none">ECE 391</span></td>
+                <td><span class="none">CS 410</span></td>
+                <td><span class="none">ECE 498RCU</span></td>
+                <td><span class="none">ANTH 101</span></td> 
+                <td><span class="none">HK110</span></td>    
+                <td><span class="text-rating-5"></span></td>      
+              </tr>
+
+              </tbody>
+          </table>
+        </div> <div class="sidebar-notes-area">
+          <h3>Notes</h3>
+          <div class="color-legend">
+            <p><strong>Color Legend</strong><br>(1 = Extremely Boring, 10 = Life Changing):</p>
+            <p>Factors include Content, Exams, Homework, Class Management... Dislike for a course doesn't mean dislike for the topic</p>
+            <div>
+              <span class="text-rating-1 rating-number" title="Rating 1: #8B0000">1</span>
+              <span class="text-rating-2 rating-number" title="Rating 2: #A62900">2</span>
+              <span class="text-rating-3 rating-number" title="Rating 3: #C25200">3</span>
+              <span class="text-rating-4 rating-number" title="Rating 4: #DE7B00">4</span>
+              <span class="text-rating-5 rating-number" title="Rating 5: #FFFF00">5</span>
+              <span class="text-rating-6 rating-number" title="Rating 6: #CCFF00">6</span>
+              <span class="text-rating-7 rating-number" title="Rating 7: #99FF00">7</span>
+              <span class="text-rating-8 rating-number" title="Rating 8: #66FF00">8</span>
+              <span class="text-rating-9 rating-number" title="Rating 9: #33FF00">9</span> <span class="text-rating-10 rating-number" title="Rating 10: #00FF00">10</span>
+            </div>
+          </div>
+          <div class="gpa-display">
+            Overall GPA: 3.89 / 4.00
+          </div>
+        </div> </div> </main>
+  </div>
+
+  <footer></footer>
+
+</body>
+</html>
