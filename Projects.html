@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Ayush Barik</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/faviconusagi_io/usagi.png" type="image/png">
+  <style>
+    /* Simple, clean project styling */
+    .main-wrapper .content {
+      background-color: #ffffff;
+      color: #222222;
+      padding: 20px 15px;
+    }
+
+    .main-wrapper .content h1 {
+      color: #222222;
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e1e4e8;
+      padding-bottom: 15px;
+    }
+
+    .main-wrapper .content h2 {
+      color: #222222;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 8px;
+    }
+
+    .project-container {
+      display: flex;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #0366d6;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .project-container.year-2023 {
+      border-left-color: #ea4aaa;
+    }
+
+    .project-media {
+      flex: 0 0 280px;
+      margin-right: 20px;
+    }
+
+    .project-media img,
+    .project-media video {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+
+    .project-content {
+      flex: 1;
+    }
+
+    .project-content h3 {
+      color: #222222;
+      margin: 0 0 8px 0;
+      font-size: 1.3em;
+    }
+
+    .project-content h4 {
+      color: #586069;
+      margin: 0 0 12px 0;
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    .project-content p {
+      color: #222222;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .project-links {
+      margin-top: 15px;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-right: 15px;
+      padding: 6px 12px;
+      background: #0366d6;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .project-links a:hover {
+      background: #0256c4;
+    }
+
+    .project-links a.report {
+      background: #28a745;
+    }
+
+    .project-links a.report:hover {
+      background: #218838;
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 700px) {
+      .project-container {
+        flex-direction: column;
+      }
+      
+      .project-media {
+        flex: none;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        Ayush Barik
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="classesnbooks.html">Classes & Books</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <main class="content">
+      <h1>Projects</h1>
+      
+      <h2>2025</h2>
+      
+      <div class="project-container">
+        <div class="project-media">
+          <video controls>
+            <source src="assets/fpga395project.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-content">
+          <h3>FPGA Live Video Streaming Pipeline</h3>
+          <h4>Joanna Li, Ayush Barik</h4>
+          <p><strong>ECE385 Class Project</strong></p>
+          <p>Engineered embedded quantized live video streaming pipeline on a Spartan-7 FPGA to transmit data from an OV7670 camera, optimized for low power (0.35W) and minimal resources (813 LUTs, 28 BRAM, 309 Flip-Flops). Implemented additional video filters and on-screen sprites.</p>
+          <p><strong>Tech Stack:</strong> Verilog, FPGA, Spartan-7, OV7670, VGA</p>
+          <div class="project-links">
+            <a href="https://github.com/AyushBarik">GitHub</a>
+            <a href="assets/fpga385project.pdf" class="report">Report</a>
+          </div>
+        </div>
+      </div>
+
+      <h2>2024</h2>
+
+      <div class="project-container">
+        <div class="project-media">
+          <img src="assets/meseek1.png" alt="MeSeek Project" />
+        </div>
+        <div class="project-content">
+          <h3>MeSeek: AI-Powered Personal Assistant</h3>
+          <h4>Generative AI, Computer Vision, Natural Language Processing</h4>
+          <p>An intelligent personal assistant that combines computer vision and NLP to help users find and organize their digital content. Built with state-of-the-art transformer models and custom fine-tuning techniques.</p>
+          <p><strong>Tech Stack:</strong> Python, PyTorch, Transformers, OpenCV, FastAPI</p>
+          <div class="project-links">
+            <a href="https://github.com/AyushBarik">GitHub</a>
+            <a href="#">Paper</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-container">
+        <div class="project-media">
+          <img src="assets/meseek2.png" alt="Research Project" />
+        </div>
+        <div class="project-content">
+          <h3>Neural Architecture Search for Audio Generation</h3>
+          <h4>Deep Learning, Audio Processing, Neural Architecture Search</h4>
+          <p>Research project exploring automated neural architecture design for audio generation tasks. Developed novel search algorithms that outperform existing methods on multiple audio datasets.</p>
+          <p><strong>Tech Stack:</strong> TensorFlow, Librosa, AutoML, CUDA</p>
+          <div class="project-links">
+            <a href="https://github.com/AyushBarik">GitHub</a>
+            <a href="#">Paper</a>
+          </div>
+        </div>
+      </div>
+
+      <h2>2023</h2>
+
+      <div class="project-container year-2023">
+        <div class="project-media">
+          <img src="assets/meseek3.png" alt="Web Application" />
+        </div>
+        <div class="project-content">
+          <h3>Real-time Collaborative Code Editor</h3>
+          <h4>Full-stack Web Development, Real-time Communication</h4>
+          <p>A collaborative code editor with real-time synchronization, built using modern web technologies. Supports multiple programming languages and includes features like syntax highlighting, version control, and live collaboration.</p>
+          <p><strong>Tech Stack:</strong> React, Node.js, WebSocket, MongoDB, Docker</p>
+          <div class="project-links">
+            <a href="https://github.com/AyushBarik">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-container year-2023">
+        <div class="project-media">
+          <img src="assets/ghiblime.jpeg" alt="Game Project" />
+        </div>
+        <div class="project-content">
+          <h3>Procedural World Generator</h3>
+          <h4>Game Development, Procedural Generation, Graphics Programming</h4>
+          <p>A procedural world generation system for a 2D adventure game. Features dynamic terrain generation, weather systems, and AI-driven NPC behavior. Built with custom algorithms for realistic and engaging game worlds.</p>
+          <p><strong>Tech Stack:</strong> Unity, C#, HLSL, Procedural Generation</p>
+          <div class="project-links">
+            <a href="https://github.com/AyushBarik">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer></footer>
+
+</body>
+</html>
+</html>
+</html>
+</html>
