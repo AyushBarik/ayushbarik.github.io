@@ -74,6 +74,14 @@ body {
     min-width: 0; /* Prevents content overflow issues in flex */
 }
 
+/* Full Width Section */
+.full-width-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
 /* Sidebar Specific Styles */
 .sidebar img {
     max-width: 100%;
@@ -130,7 +138,8 @@ body {
     padding-bottom: 10px;
 }
 
-.content h2 {
+.content h2,
+.full-width-section h2 {
     font-size: 1.4em;
     margin-top: 30px; /* Space above section headings */
     margin-bottom: 15px;
@@ -142,22 +151,26 @@ body {
     margin-bottom: 15px;
 }
 
-.content a {
+.content a,
+.full-width-section a {
     color: #007bff; /* Standard link blue */
     text-decoration: none;
 }
 
-.content a:hover {
+.content a:hover,
+.full-width-section a:hover {
     text-decoration: underline;
 }
 
-.content ul {
+.content ul,
+.full-width-section ul {
     list-style: disc; /* Default bullets */
     margin-left: 20px; /* Indent list */
     margin-bottom: 15px;
 }
 
-.content ul li {
+.content ul li,
+.full-width-section ul li {
     margin-bottom: 8px;
 }
 
