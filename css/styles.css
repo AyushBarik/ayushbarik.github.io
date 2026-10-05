@@ -224,3 +224,33 @@ footer {
 #emailUnscrambleLink span.contact-icon-emoji {
     margin-right: 5.65px; /* TWEAK THIS VALUE: Increase or decrease for desired space */
 }
+
+/* Research figures. Each width is chosen so the text inside the figure renders at
+   roughly 11-12px, close to the author line, which also keeps the figures similar in size. */
+.research-figure {
+    display: block;
+    width: var(--figure-width, 100%);
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.figure-rir {
+    --figure-width: 280px;
+}
+
+.figure-soundweaver {
+    --figure-width: 700px;
+}
+
+.figure-flashdiff {
+    --figure-width: 480px;
+}
+
+.figure-rewardflow {
+    --figure-width: 470px;
+}
+
+.figure-engineering-agi {
+    --figure-width: 0px;
+}
