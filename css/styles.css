@@ -83,7 +83,7 @@ body {
 }
 
 /* Sidebar Specific Styles */
-.sidebar img {
+.sidebar > img {
     max-width: 100%;
     height: auto;
     border-radius: 50%; /* Makes the image round */
@@ -116,9 +116,21 @@ body {
 
 .sidebar ul li .icon {
     margin-right: 8px; /* Space between icon and text */
-    width: 16px; /* Give icon some space */
-    display: inline-block;
-    text-align: center;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    object-fit: contain; /* Keeps non-square logos (Outlook) undistorted */
+}
+
+/* The email link wraps its icon, so it lines the icon up with the text the same way the list
+   items do. The scrambled address spans two lines, so the icon sits on the first one. */
+.sidebar .contact-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.sidebar .contact-item .icon {
+    margin-top: calc((1.6em - 16px) / 2);
 }
 
 .sidebar ul li a {
@@ -198,7 +210,7 @@ footer {
         padding-right: 0;
         text-align: center; /* Center sidebar content */
     }
-     .sidebar img {
+     .sidebar > img {
         margin-left: auto;
         margin-right: auto; /* Center image */
         max-width: 150px; /* Control image size */
@@ -219,10 +231,6 @@ footer {
      .top-nav nav ul li {
          margin: 0 10px; /* Adjust spacing */
      }
-}
-
-#emailUnscrambleLink span.contact-icon-emoji {
-    margin-right: 5.65px; /* TWEAK THIS VALUE: Increase or decrease for desired space */
 }
 
 /* Research figures. Each width is chosen so the text inside the figure renders at
@@ -253,4 +261,31 @@ footer {
 
 .figure-engineering-agi {
     --figure-width: 0px;
+}
+
+/* arXiv link shown at the end of each paper's title line. An inline-flex box whose only
+   child is an image takes its baseline from the image's bottom edge, so the offset below
+   places the logo (and with it the button) centered on the title's cap height. */
+.arxiv-button {
+    display: inline-flex;
+    align-items: center;
+    height: 1.55em;
+    padding: 0 0.45em;
+    margin-left: 6px;
+    background: #b31b1b;
+    border: 1px solid #b31b1b;
+    border-radius: 5px;
+    vertical-align: -0.19em;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.arxiv-button img {
+    display: block;
+    height: 1.1em;
+}
+
+.full-width-section a.arxiv-button:hover {
+    background: #8f1515;
+    border-color: #8f1515;
+    text-decoration: none;
 }
