@@ -289,3 +289,14 @@ footer {
     border-color: #8f1515;
     text-decoration: none;
 }
+
+/* Paper titles link to the hosted PDF. They keep the title's color and fade slightly on hover. */
+.full-width-section a.paper-title {
+    color: inherit;
+    transition: color 0.15s;
+}
+
+.full-width-section a.paper-title:hover {
+    color: #666;
+    text-decoration: none;
+}
