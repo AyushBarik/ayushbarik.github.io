@@ -382,3 +382,104 @@ footer {
 .paper-links {
     white-space: nowrap;
 }
+
+/* Projects page. Entries follow the research list on the home page: a title line with link
+   buttons, then the description and an optional figure or video. */
+.full-width-section.project-page {
+    margin-top: 0;
+}
+
+.full-width-section ul.project-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.full-width-section ul.project-list > li {
+    margin-bottom: 30px;
+}
+
+.project-list p {
+    margin: 8px 0 4px;
+}
+
+.project-icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.4em;
+    vertical-align: -0.22em;
+}
+
+/* A row of figures shown at the same height. Each item's share of the row's width is its aspect
+   ratio (--aspect, width / height), so equal heights hold at any width. Each row sets
+   --row-width = 270px x (sum of its aspects) + 10px per gap, which makes it 270px tall. */
+.project-media {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    max-width: var(--row-width, 100%);
+    margin-top: 10px;
+}
+
+.project-media > * {
+    flex: var(--aspect) 1 0;
+    min-width: 0;
+}
+
+.project-media img,
+.project-media video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.project-video {
+    --aspect: 1.7778; /* 16:9 */
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+/* Wide rows stack on phones; rows of portrait figures (.keep-row) stay side by side, since
+   stacked at full width they would be very tall. */
+@media (max-width: 600px) {
+    .project-media:not(.keep-row) {
+        flex-direction: column;
+    }
+
+    .project-media:not(.keep-row) > * {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Plain outlined button for links on a title line (store pages, reports), sized like the
+   arXiv and citation buttons. Its baseline comes from its text rather than a logo, so it needs
+   a different offset to sit centered on the title's cap height. */
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    height: 1.55em;
+    padding: 0 0.6em;
+    margin-left: 6px;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 5px;
+    vertical-align: 0.14em;
+    white-space: nowrap;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.full-width-section a.link-button {
+    color: #333;
+}
+
+.link-button > span {
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.full-width-section a.link-button:hover {
+    background: #f6f8fa;
+    border-color: #999;
+    text-decoration: none;
+}

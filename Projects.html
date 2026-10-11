@@ -1,150 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPTRT3GP36"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPTRT3GP36');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects - Ayush Barik</title>
-  <link rel="stylesheet" href="css/styles.css?v=2">
-  <link rel="icon" href="assets/favicon_io_uiuc/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="assets/favicon_io_uiuc/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="assets/favicon_io_uiuc/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="assets/favicon_io_uiuc/apple-touch-icon.png">
-  <style>
-    /* Simple, clean project styling */
-    .main-wrapper .content {
-      background-color: #ffffff;
-      color: #222222;
-      padding: 20px 15px;
-    }
-
-    .main-wrapper .content h1 {
-      color: #222222;
-      text-align: center;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #e1e4e8;
-      padding-bottom: 15px;
-    }
-
-    .main-wrapper .content h2 {
-      color: #222222;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-size: 1.5em;
-      border-bottom: 1px solid #e1e4e8;
-      padding-bottom: 8px;
-    }
-
-    .project-container {
-      display: flex;
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #f8f9fa;
-      border-radius: 8px;
-      border-left: 4px solid #0366d6;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .project-container.year-2023 {
-      border-left-color: #ea4aaa;
-    }
-
-    .project-container.year-2024 {
-      border-left-color: #fd7e14;
-    }
-
-    .project-media {
-      flex: 0 0 280px;
-      margin-right: 20px;
-    }
-
-    .project-media img,
-    .project-media video {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-
-    .project-content {
-      flex: 1;
-    }
-
-    .project-content h3 {
-      color: #222222;
-      margin: 0 0 8px 0;
-      font-size: 1.3em;
-    }
-
-    .project-content h4 {
-      color: #586069;
-      margin: 0 0 12px 0;
-      font-size: 1em;
-      font-style: italic;
-    }
-
-    .project-content p {
-      color: #222222;
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-
-    .project-links {
-      margin-top: 15px;
-    }
-
-    .project-links a {
-      display: inline-block;
-      margin-right: 15px;
-      padding: 6px 12px;
-      background: #0366d6;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-
-    .project-links a:hover {
-      background: #0256c4;
-    }
-
-    .project-links a.report {
-      background: #28a745;
-    }
-
-    .project-links a.report:hover {
-      background: #218838;
-    }
-
-    .conference-badge {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      background: #dc3545;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.8em;
-      font-weight: bold;
-    }
-
-    .project-container {
-      position: relative;
-    }
-
-    /* Responsive design */
-    @media screen and (max-width: 700px) {
-      .project-container {
-        flex-direction: column;
-      }
-      
-      .project-media {
-        flex: none;
-        margin-right: 0;
-        margin-bottom: 15px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="assets/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
 </head>
 <body>
 
@@ -156,71 +30,76 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <!-- <li><a href="Projects.html">Projects</a></li> -->
+          <li><a href="Projects.html">Projects</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <!-- <li><a href="classesnbooks.html">Classes & Books</a></li> -->
         </ul>
       </nav>
     </div>
+  </header>
 
-    <div class="main-wrapper">
-      <main class="content">
-        <h1>Projects</h1>
-
-        <h2>2025</h2>
-
-        <div class="project-container">
-          <div class="project-media">
-            <img src="assets/engdesignpaper1.png" alt="Toward Engineering AGI Paper">
-          </div>
-          <div class="project-content">
-            <h3>Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs</h3>
-            <p><strong>Research Paper</strong></p>
-            <p>Conducted comprehensive benchmarking of Large Language Models' engineering design capabilities, evaluating their performance across various engineering design tasks and methodologies.</p>
-            <p><strong>Skills:</strong> Python, Signal Processing, Computer Vision</p>
-            <div class="conference-badge">NeurIPS 2025</div>
-          </div>
-        </div>
-
-        <div class="project-container">
-          <div class="project-media">
-            <video controls preload="metadata">
-              <source src="assets/fpga395project.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="project-content">
-            <h3>Real-Time QVGA Video Streaming with
-              Filters on FPGA</h3>
-            <h4>Joanna Li, Ayush Barik</h4>
-            <p><strong>ECE385 Class Project</strong></p>
-            <p>Engineered embedded quantized live video streaming pipeline on a Spartan-7 FPGA to transmit data from an OV7670 camera, optimized for low power (0.35W) and minimal resources (813 LUTs, 28 BRAM, 309 Flip-Flops). Implemented additional video filters and on-screen sprites.</p>
-            <p><strong>Skills:</strong> SystemVerilog, Python</p>
-            <div class="project-links">
-              <a href="assets/fpga385project.pdf" class="report">Report</a>
-            </div>
-          </div>
-        </div>
-
-        <h2>2024</h2>
-
-        <div class="project-container year-2024">
-          <div class="project-media">
-            <img src="assets/URSA.png" alt="URSA Research Presentation">
-          </div>
-          <div class="project-content">
-            <h3>Multilingual LLM-TTS Framework with Digital Signal Processing for Context-Aware Conversational AI</h3>
-            <h4>Ayush Barik, Roger Xiao, Yueze (Hyouin) Liu</h4>
-            <p><strong>Undergraduate Research Symposium</strong></p>
-            <p>Developed a text-to-speech (TTS) framework integrating an LLM (Qwen-7B) with a voice model (XTTSv2) to create a context-aware, multilingual conversational AI. Trained the system on a custom, scraped dataset of the character Ruan Mei from Honkai: Star Rail. The text-to-voice pipeline uses Digital Signal Processing techniques, including Wiener and Butterworth filtering, to enhance audio quality and clarity.</p>
-            <p><strong>Skills:</strong> Python, Text-to-Speech (TTS), Large Language Models (LLMs), Digital Signal Processing (DSP), Data Scraping</p>
-          </div>
-        </div>
-
-      </main>
+  <div class="full-width-section project-page">
+    <div style="margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+      <h2 style="margin: 0; padding: 0; border-bottom: none;">Projects</h2>
     </div>
 
-  <footer></footer>
+    <ul class="project-list">
+      <li>
+        <strong class="project-title"><img class="project-icon" src="assets/persistent-downloads-icon.png" alt="">Persistent Downloads Button</strong>
+        <a class="link-button" href="https://chromewebstore.google.com/detail/persistent-downloads-butt/fcgipcaajgcgpcogfjlfkfkgdpginhjj" target="_blank" rel="noopener"><span>Chrome Web Store &middot; 47 installs</span></a>
+        <p>
+          The Brave browser doesn't have a <em>persistent</em> downloads button (iykyk), so I vibecoded one.
+          It adds a toolbar button that never disappears, so you can open, reveal, or drag-and-drop your
+          recent downloads.
+        </p>
+      </li>
+
+      <li>
+        <strong class="project-title">GPT-2 in CUDA</strong>
+        <span class="link-button"><span>Report (PDF)</span></span>
+        <br><small style="color: #4d4949;"><strong style="color: #4d4949;">Ayush Barik</strong>, Anand Parab, Krishnan Shankar, Sidd Cheetancheri &middot; ECE 408 class project</small>
+        <p>
+          We re-implemented GPT-2 inference in CUDA and optimized it for NVIDIA A40 GPUs, using Nsight Systems
+          and Nsight Compute to find bottlenecks. We added <strong>FlashAttention-2</strong>,
+          <strong>sliding-window attention</strong>, <strong>KV caching</strong>, and <strong>CUTLASS kernel fusion</strong>.
+          Inside the matmul and attention kernels, we hid memory latency with double-buffering and
+          avoided bank conflicts by swizzling shared memory.
+        </p>
+        <div class="project-media keep-row" style="--row-width: 461px;">
+          <a class="project-figure" style="--aspect: 0.7053;" href="assets/transformer.png" target="_blank" rel="noopener">
+            <img src="assets/transformer.png" width="1010" height="1432" alt="Transformer architecture diagram">
+          </a>
+          <a class="project-figure" style="--aspect: 0.9654;" href="assets/flashattn.png" target="_blank" rel="noopener">
+            <img src="assets/flashattn.png" width="1116" height="1156" alt="FlashAttention tiling diagram">
+          </a>
+        </div>
+      </li>
+
+      <li>
+        <strong class="project-title">Real-Time QVGA Video Streaming with Filters on FPGA</strong>
+        <a class="link-button" href="assets/fpga385project.pdf" target="_blank" rel="noopener"><span>Report (PDF)</span></a>
+        <br><small style="color: #4d4949;"><strong style="color: #4d4949;">Ayush Barik</strong>, Joanna Li &middot; ECE 385 class project</small>
+        <p>
+          We built a real-time video pipeline on a Spartan-7 FPGA that captures a live OV7670 camera feed and
+          renders it to an HDMI monitor. Our SCCB controller configures the camera to output a quantized
+          12-bit RGB444 QVGA stream, small enough to hold a full frame in on-chip BRAM, and a dual-port frame
+          buffer bridges the camera and display clock domains. On the display side, we generate 640&times;480
+          video timing, upscale each frame, and composite color filters, text, and a sprite pixel by pixel,
+          all in 813 LUTs at 0.35&nbsp;W.
+        </p>
+        <div class="project-media" style="--row-width: 844px;">
+          <a class="project-figure" style="--aspect: 1.3095;" href="assets/blockdiagram.png" target="_blank" rel="noopener">
+            <img src="assets/blockdiagram.png" width="1684" height="1286" alt="Block diagram of the FPGA video streaming design">
+          </a>
+          <video class="project-video" controls preload="metadata" playsinline>
+            <source src="assets/fpga395project.mp4#t=0.1" type="video/mp4">
+          </video>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+  </footer>
 
 </body>
 </html>
