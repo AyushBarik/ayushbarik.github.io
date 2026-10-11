@@ -300,3 +300,85 @@ footer {
     color: #666;
     text-decoration: none;
 }
+
+/* Research stats under the sidebar links. Numbers come from Semantic Scholar (see
+   js/scholar-stats.js) and are right-aligned in tabular figures so they line up. */
+.research-stats {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.research-stats dl div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.research-stats dt {
+    color: #555;
+}
+
+.research-stats dd {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.sidebar .research-stats-note {
+    margin: 6px 0 0;
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* Citation count shown after the arXiv button. It shares the button's height and vertical
+   offset so the two sit on the same line; the label is set smaller inside it. */
+.citation-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    height: 1.55em;
+    padding: 0 0.5em;
+    margin-left: 5px;
+    background: #fff;
+    border: 1px solid #c9d5ea;
+    border-radius: 5px;
+    vertical-align: -0.19em;
+    white-space: nowrap;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.citation-button img {
+    display: block;
+    height: 1.05em;
+}
+
+.full-width-section a.citation-button {
+    color: #1f4e9c;
+}
+
+.citation-button > span {
+    font-size: 0.8em;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.full-width-section a.citation-button:hover {
+    background: #f1f5fc;
+    border-color: #1f4e9c;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .research-stats {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+}
+
+/* Keeps the arXiv and citation buttons together when a long title wraps. */
+.paper-links {
+    white-space: nowrap;
+}
