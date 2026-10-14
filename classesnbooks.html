@@ -1,140 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPTRT3GP36"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPTRT3GP36');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classes & Books - Ayush Barik</title>
-  <link rel="stylesheet" href="css/styles.css?v=2">
-  <link rel="icon" href="assets/favicon_io_uiuc/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="assets/favicon_io_uiuc/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="assets/favicon_io_uiuc/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="assets/favicon_io_uiuc/apple-touch-icon.png">
-  <style>
-    /* NEW RULE ADDED HERE to allow the main page container to be wider */
-    .main-wrapper {
-        max-width: 89%; /* Allows .main-wrapper to use full available screen width */
-    }
-
-    /* Page content area - Dark Theme */
-    .main-wrapper .content {
-      background-color: #121212; /* Very dark gray (near black) for the page */
-      color: #e0e0e0; /* Light text for dark background */
-      padding: 20px 15px;
-    }
-
-    .main-wrapper .content h1 {
-        color: #f5f5f5; /* Brighter white for H1 */
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .main-wrapper .content .table-description {
-        color: #b0b0b0; /* Lighter gray for description */
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 0.9em;
-    }
-
-    /* Layout container for table and sidebar */
-    .course-layout-container {
-        display: flex;
-        flex-wrap: nowrap; /* Keeps table and notes side-by-side */
-        gap: 25px;
-        /* max-width: 1900px; */ /* Original max-width was commented out or removed - good */
-        max-width: 100%;   /* ADDED/MODIFIED: Ensures this container uses the full width of its parent */
-        margin: 0 auto;
-    }
-
-    .table-area {
-        flex-grow: 3;      /* Allow it to grow to take 3 parts of available space */
-        flex-shrink: 1;    /* Allow it to shrink if needed */
-        flex-basis: 0;     /* Start with a basis of 0, letting grow define its size */
-        min-width: 0;      /* Crucial for flex items: allows them to shrink below their content's intrinsic minimum size */
-        overflow-x: auto;  /* Fallback for table scroll if content is still excessively wide */
-    }
-
-    .sidebar-notes-area {
-        flex: 1;
-        min-width: 220px;
-        padding-top: 0;
-    }
-    
-    .sidebar-notes-area h3 {
-        font-size: 1.2em;
-        color: #e0e0e0;
-        margin-top: 0;
-        margin-bottom: 15px;
-        border-bottom: 1px solid #444; /* Lighter border for dark theme */
-        padding-bottom: 8px;
-    }
-
-    .sidebar-notes-area .color-legend,
-    .sidebar-notes-area .gpa-display {
-        margin-bottom: 20px;
-        font-size: 0.85em;
-        line-height: 1.6;
-        color: #b0b0b0; /* Lighter gray for notes text */
-    }
-    .sidebar-notes-area .gpa-display {
-        font-weight: bold;
-        font-size: 0.9em;
-        color: #e0e0e0; /* Brighter for GPA */
-    }
-    .sidebar-notes-area .color-legend span[style*="color"] {
-        font-weight: bold;
-        padding: 0 2px;
-    }
-
-
-    /* Table Styles - Dark Theme */
-    .course-schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #1e1e1e; /* Dark background for the table */
-      color: #dcdcdc; /* Default light text for table content */
-      font-size: 0.9em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adjusted shadow for dark */
-    }
-
-    .course-schedule-table th, .course-schedule-table td {
-      border: 1px solid #444; /* Lighter gray borders (not pure white, which can be too harsh) */
-      padding: 8px 10px;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .course-schedule-table thead th {
-      background-color: #2a2a2a; /* Slightly different dark shade for headers */
-      color: #f5f5f5; /* Bright white for header text */
-      font-weight: bold;
-      text-align: center;
-    }
-    .course-schedule-table tbody td:first-child { /* Semester column */
-        font-weight: bold;
-        background-color: #252525; /* Distinct dark shade for semester */
-        color: #e0e0e0;
-    }
-    .course-schedule-table tbody td:last-child { /* Total Credits column */
-        text-align: center;
-        font-weight: bold;
-        color: #e0e0e0;
-    }
-
-    /* Your Custom Text Color Classes (10-point spectrum) */
-    .text-rating-1  { color: #8B0000; font-weight: bold; }
-    .text-rating-2  { color: #A62900; font-weight: bold; }
-    .text-rating-3  { color: #C25200; font-weight: bold; }
-    .text-rating-4  { color: #DE7B00; font-weight: bold; }
-    .text-rating-5  { color: #FFFF00; font-weight: bold; }
-    .text-rating-6  { color: #CCFF00; font-weight: bold; }
-    .text-rating-7  { color: #99FF00; font-weight: bold; }
-    .text-rating-8  { color: #66FF00; font-weight: bold; }
-    .text-rating-9  { color: #00D100; font-weight: bold; }
-    .text-rating-10 { color: #28a745; font-weight: bold; }
-    .none { color: #ffffff; font-weight: bold; }
-  </style>
-
+  <title>Undergraduate Classes - Ayush Barik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=22">
+  <link rel="icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="assets/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
 </head>
-<body>
+<body class="wide-page">
 
   <header class="top-nav">
     <div class="nav-container">
@@ -142,116 +31,111 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <!-- <li><a href="Projects.html">Projects</a></li> -->
+          <li><a href="Projects.html">Projects</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <!-- <li><a href="classesnbooks.html">Classes & Books</a></li> -->
+          <li><a href="classesnbooks.html">Classes</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <div class="main-wrapper">
-    <main class="content">
-      <h1>Academic Schedule</h1>
-      <p class="table-description">
-  
-      </p>
-      
-      <div class="course-layout-container">
-        <div class="table-area">
-          <table class="course-schedule-table">
-            <thead>
-              <tr>
-                <th>Year Semester</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Freshman Fall (2023)</td>
-                <td><span class="text-rating-8">ECE 120 (Introduction to Computing)</span></td>
-                <td><span class="text-rating-6">MATH 285 (Intro Differential Equations)</span></td>
-                <td><span class="text-rating-8">MATH 213 (Basic Discrete Mathematics)</span></td>
-                <td><span class="text-rating-5">ENG 100 (Engineering Orientation)</span></td>
-                <td><span class="text-rating-5">ENG 177 (GFX Career Scholars)</span></td> 
-                <td><span class="text-rating-8">REL 108 (Religion & Society in West I)</span></td>
-              </tr>
+  <div class="full-width-section course-page">
+    <h2>Undergraduate Classes</h2>
 
-              <tr>
-                <td>Freshman Spring (2024)</td>
-                <td><span class="text-rating-3">ECE 110 (Introduction to Electronics)</span></td>
-                <td><span class="text-rating-6">ECE 220 (Computer Systems & Programming)</span></td>
-                <td><span class="text-rating-7">MATH 257 (Linear Algebra w/ Computational Applications)</span></td>
-                <td><span class="text-rating-5">PHYS 213 (Thermal Physics)</span></td> 
-                <td><span class="text-rating-5">PHYS 214 (Quantum Physics)</span></td> 
-                <td><span class="text-rating-5">ENG 177 (GFX Career Scholars)</span></td> 
-              </tr>
-              
-              <tr>
-                <td>Sophomore Fall (2024)</td>
-                <td><span class="text-rating-6">CS 225 (Data Structures)</span></td>
-                <td><span class="text-rating-7">ECE 313 (Probability with Engineering Applications)</span></td>
-                <td><span class="text-rating-7">ECE 210 (Analog Signal Processing)</span></td>
-                <td><span class="text-rating-4">ARTJ 301 (Manga: The Art of Image and Word)</span></td>
-                <td><span class="text-rating-4">HKN 271 (Health Equity in the United States)</span></td> 
-                <td><span class="text-rating-5">ENG 199 (URSA Program)</span></td>     
-              </tr>
+    <div class="semester-row">
 
-              <tr>
-                <td>Sophomore Spring (2025)</td>
-                <td><span class="text-rating-6">ECE 385 (Digital Systems Laboratory)</span></td>
-                <td><span class="text-rating-10">CS 444 / ECE 494 (Deep Learning for Computer Vision)</span></td>
-                <td><span class="text-rating-8">ECE 364 (Programming Methods for Machine Learning)</span></td>
-                <td><span class="text-rating-6">ECE 498BH (LLM Reasoning for Engineering)</span></td>
-                <td><span class="text-rating-5">ASTR 330 (Extraterrestrial Life)</span></td> 
-                <td><span class="text-rating-4">RST 242 (Nature and American Culture)</span></td>     
-              </tr>
+      <section class="semester">
+        <h3><em>Fall</em> 2023</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2023/fall/ECE/120" target="_blank" rel="noopener"><span class="course-code">ECE 120<span class="standout" role="img" aria-label="Phenomenal class" title="Phenomenal class"></span></span><span class="course-name">Introduction to Computing</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2023/fall/MATH/213" target="_blank" rel="noopener"><span class="course-code">MATH 213</span><span class="course-name">Basic Discrete Mathematics</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2023/fall/MATH/285" target="_blank" rel="noopener"><span class="course-code">MATH 285</span><span class="course-name">Introduction to Differential Equations</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2023/fall/REL/108" target="_blank" rel="noopener"><span class="course-code">REL 108</span><span class="course-name">Religion &amp; Society in the West&nbsp;I</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2023/fall/ENG/100" target="_blank" rel="noopener"><span class="course-code">ENG 100</span><span class="course-name">Engineering Orientation Seminar</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2023/fall/ENG/177" target="_blank" rel="noopener"><span class="course-code">ENG 177</span><span class="course-name">Engineering First-Year Experience (GFX)</span></a></li>
+        </ul>
+      </section>
 
-              <tr>
-                <td>Junior Fall (2025)</td>
-                <td><span class="text-rating-7">ECE 374 (Intro to Algs & Models of Comp)</span></td>
-                <td><span class="text-rating-8">CS 498 (ML Systems)</span></td>
-                <td><span class="text-rating-10">ECE 498 (Deep Generative Models)</span></td>
-                <td><span class="text-rating-7">ANTH 101 (Intro to Anthropology)</span></td> 
-                <td><span class="text-rating-6">HK 206 (Health Care Systems)</span></td>    
-                <td><span class="text-rating-7">CS 397 (Independent Study)</span></td>      
-              </tr>
+      <section class="semester">
+        <h3><em>Spring</em> 2024</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2024/spring/ECE/220" target="_blank" rel="noopener"><span class="course-code">ECE 220</span><span class="course-name">Computer Systems &amp; Programming</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/spring/ECE/110" target="_blank" rel="noopener"><span class="course-code">ECE 110</span><span class="course-name">Introduction to Electronics</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/spring/MATH/257" target="_blank" rel="noopener"><span class="course-code">MATH 257</span><span class="course-name">Linear Algebra with Computational Applications</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/spring/PHYS/213" target="_blank" rel="noopener"><span class="course-code">PHYS 213</span><span class="course-name">Thermal Physics</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/spring/PHYS/214" target="_blank" rel="noopener"><span class="course-code">PHYS 214</span><span class="course-name">Quantum Physics</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/spring/ENG/177" target="_blank" rel="noopener"><span class="course-code">ENG 177</span><span class="course-name">Engineering First-Year Experience (GFX)</span></a></li>
+        </ul>
+      </section>
 
-              <tr>
-                <td>Junior Spring (2026)</td>
-                <td><span class="text-rating-8">ECE 408 (Applied Parallel Programming)</span></td>
-                <td><span class="text-rating-8">ECE 496 (Senior Research Project)</span></td>
-                <td><span class="text-rating-8">CS 397 (Independent Study)</span></td>
-                <td><span class="none">HK 220 (Introduction to Epidemiology)</span></td>
-                <td></td>
-                <td></td>
-              </tr>
+      <section class="semester">
+        <h3><em>Fall</em> 2024</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2024/fall/ENG/199" target="_blank" rel="noopener"><span class="course-code">ENG 199</span><span class="course-name">Undergraduate Research Program (URSA)</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/fall/CS/225" target="_blank" rel="noopener"><span class="course-code">CS 225</span><span class="course-name">Data Structures</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/fall/ECE/313" target="_blank" rel="noopener"><span class="course-code">ECE 313</span><span class="course-name">Probability with Engineering Applications</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/fall/ECE/210" target="_blank" rel="noopener"><span class="course-code">ECE 210</span><span class="course-name">Analog Signal Processing</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/fall/ARTJ/301" target="_blank" rel="noopener"><span class="course-code">ARTJ 301</span><span class="course-name">Manga: The Art of Image and Word</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2024/fall/HK/271" target="_blank" rel="noopener"><span class="course-code">HK 271</span><span class="course-name">Health Equity in the United States</span></a></li>
+        </ul>
+      </section>
 
-              </tbody>
-          </table>
-        </div> <div class="sidebar-notes-area">
-          <h3>Notes</h3>
-          <div class="color-legend">
-            <p><strong>Color Legend</strong><br>(1 = Extremely Boring, 10 = Extremely Interesting):</p>
-            <p>Factors include Content, Exams, Homework, Class Management... Dislike for a course doesn't mean dislike for the topic</p>
-            <div>
-              <span class="text-rating-1 rating-number" title="Rating 1: #8B0000">1</span>
-              <span class="text-rating-2 rating-number" title="Rating 2: #A62900">2</span>
-              <span class="text-rating-3 rating-number" title="Rating 3: #C25200">3</span>
-              <span class="text-rating-4 rating-number" title="Rating 4: #DE7B00">4</span>
-              <span class="text-rating-5 rating-number" title="Rating 5: #FFFF00">5</span>
-              <span class="text-rating-6 rating-number" title="Rating 6: #CCFF00">6</span>
-              <span class="text-rating-7 rating-number" title="Rating 7: #99FF00">7</span>
-              <span class="text-rating-8 rating-number" title="Rating 8: #66FF00">8</span>
-              <span class="text-rating-9 rating-number" title="Rating 9: #33FF00">9</span> <span class="text-rating-10 rating-number" title="Rating 10: #00FF00">10</span>
-            </div>
-          </div>
-        </div> </div> </main>
+      <section class="semester">
+        <h3><em>Spring</em> 2025</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2025/spring/ECE/494" target="_blank" rel="noopener"><span class="course-code">ECE 494<span class="standout" role="img" aria-label="Phenomenal class" title="Phenomenal class"></span></span><span class="course-name">Deep Learning for Computer Vision</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/spring/ECE/498" target="_blank" rel="noopener"><span class="course-code">ECE 498</span><span class="course-name">LLM Reasoning for Engineering</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/spring/ECE/364" target="_blank" rel="noopener"><span class="course-code">ECE 364</span><span class="course-name">Programming Methods for Machine Learning</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/spring/ECE/385" target="_blank" rel="noopener"><span class="course-code">ECE 385</span><span class="course-name">Digital Systems Laboratory</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/spring/ASTR/330" target="_blank" rel="noopener"><span class="course-code">ASTR 330</span><span class="course-name">Extraterrestrial Life</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/spring/RST/242" target="_blank" rel="noopener"><span class="course-code">RST 242</span><span class="course-name">Nature and American Culture</span></a></li>
+        </ul>
+      </section>
+
+      <section class="semester">
+        <h3><em>Fall</em> 2025</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2025/fall/CS/397" target="_blank" rel="noopener"><span class="course-code">CS 397</span><span class="course-name">Individual Study</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/fall/ECE/498" target="_blank" rel="noopener"><span class="course-code">ECE 498<span class="standout" role="img" aria-label="Phenomenal class" title="Phenomenal class"></span></span><span class="course-name">Deep Generative Models</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/fall/CS/498" target="_blank" rel="noopener"><span class="course-code">CS 498</span><span class="course-name">Machine Learning Systems</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/fall/ECE/374" target="_blank" rel="noopener"><span class="course-code">ECE 374</span><span class="course-name">Introduction to Algorithms &amp; Models of Computation</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/fall/ANTH/101" target="_blank" rel="noopener"><span class="course-code">ANTH 101</span><span class="course-name">Introduction to Anthropology</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2025/fall/HK/302" target="_blank" rel="noopener"><span class="course-code">HK 302</span><span class="course-name">Disability in American Society</span></a></li>
+        </ul>
+      </section>
+
+      <section class="semester">
+        <h3><em>Spring</em> 2026</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2026/spring/ECE/496" target="_blank" rel="noopener"><span class="course-code">ECE 496</span><span class="course-name">Senior Research Project</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/spring/CS/397" target="_blank" rel="noopener"><span class="course-code">CS 397</span><span class="course-name">Individual Study</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/spring/ECE/408" target="_blank" rel="noopener"><span class="course-code">ECE 408<span class="standout" role="img" aria-label="Phenomenal class" title="Phenomenal class"></span></span><span class="course-name">Applied Parallel Programming</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/spring/HK/207" target="_blank" rel="noopener"><span class="course-code">HK 207</span><span class="course-name">Introduction to Epidemiology</span></a></li>
+        </ul>
+      </section>
+
+      <section class="semester">
+        <h3><em>Fall</em> 2026</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2026/fall/ECE/499" target="_blank" rel="noopener"><span class="course-code">ECE 499</span><span class="course-name">Senior Thesis</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/fall/CS/397" target="_blank" rel="noopener"><span class="course-code">CS 397</span><span class="course-name">Individual Study</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/fall/ECE/397" target="_blank" rel="noopener"><span class="course-code">ECE 397</span><span class="course-name">Individual Study</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/fall/CS/441" target="_blank" rel="noopener"><span class="course-code">CS 441</span><span class="course-name">Applied Machine Learning</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2026/fall/HK/243" target="_blank" rel="noopener"><span class="course-code">HK 243</span><span class="course-name">Sport &amp; Modern Society</span></a></li>
+        </ul>
+      </section>
+
+      <section class="semester">
+        <h3><em>Spring</em> 2027</h3>
+        <ul class="course-list">
+          <li><a href="https://courses.illinois.edu/schedule/2027/spring/ECE/391" target="_blank" rel="noopener"><span class="course-code">ECE 391</span><span class="course-name">Computer Systems Engineering</span></a></li>
+          <li><a href="https://courses.illinois.edu/schedule/2027/spring/ECE/310" target="_blank" rel="noopener"><span class="course-code">ECE 310</span><span class="course-name">Digital Signal Processing</span></a></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <p class="course-note"><span class="standout" aria-hidden="true"></span>Phenomenal classes that meaningfully altered my perspective.</p>
   </div>
 
   <footer></footer>

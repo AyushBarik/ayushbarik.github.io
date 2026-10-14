@@ -301,13 +301,52 @@ footer {
     text-decoration: none;
 }
 
-/* Research stats under the sidebar links. Numbers come from Semantic Scholar (see
-   js/scholar-stats.js) and are right-aligned in tabular figures so they line up. */
+/* Research stats under the sidebar links, shown as a small card that links to the Semantic
+   Scholar profile. Numbers come from Semantic Scholar (see js/scholar-stats.js) and are
+   right-aligned in tabular figures so they line up. */
 .research-stats {
-    margin-top: 16px;
-    padding-top: 12px;
-    border-top: 1px solid #eee;
+    display: block;
+    margin-top: 18px;
+    padding: 10px 12px 8px;
     font-size: 0.9em;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #e3e6eb;
+    border-radius: 6px;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.research-stats:hover {
+    background: #f8f9fb;
+    border-color: #c9d5ea;
+}
+
+.research-stats-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #1f4e9c;
+}
+
+.research-stats-head img {
+    width: 14px;
+    height: 14px;
+}
+
+.research-stats-arrow {
+    margin-left: auto;
+    color: #9aa5b8;
+    transition: color 0.15s, transform 0.15s;
+}
+
+.research-stats:hover .research-stats-arrow {
+    color: #1f4e9c;
+    transform: translate(1px, -1px);
 }
 
 .research-stats dl div {
@@ -323,12 +362,6 @@ footer {
 .research-stats dd {
     font-weight: 600;
     font-variant-numeric: tabular-nums;
-}
-
-.sidebar .research-stats-note {
-    margin: 6px 0 0;
-    font-size: 0.8em;
-    color: #999;
 }
 
 /* Citation count shown after the arXiv button. It shares the button's height and vertical
@@ -482,4 +515,152 @@ footer {
     background: #f6f8fa;
     border-color: #999;
     text-decoration: none;
+}
+
+/* Classes page. Semesters run left to right along one rail: each semester's name sits above
+   it with a marker where the semester starts, and its courses hang below. Each course links
+   to its Course Explorer page for that term. The page is wider than the others so the eight
+   columns fit; on narrower screens the row scrolls sideways. */
+.wide-page .top-nav .nav-container,
+.wide-page .full-width-section {
+    max-width: 1440px;
+}
+
+.course-page {
+    --rail-gap: 24px;
+    margin-top: 0;
+}
+
+.full-width-section.course-page h2 {
+    margin: 6px 0 30px;
+    padding: 0;
+    border-bottom: none;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 2.25em;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+}
+
+.semester-row {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(150px, 1fr));
+    column-gap: var(--rail-gap);
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+/* The rail is each semester's bottom border, stretched across the gap to the next one. */
+.semester h3 {
+    position: relative;
+    margin: 0 calc(-1 * var(--rail-gap)) 0 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #222;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 1.45em;
+    font-weight: 400;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.semester:last-child h3 {
+    margin-right: 0;
+}
+
+.semester h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 9px;
+    height: 9px;
+    background: #222;
+    border-radius: 50%;
+}
+
+.semester h3 em {
+    color: #777;
+}
+
+/* Courses hang off the marker on a thin vertical line. */
+.full-width-section ul.course-list {
+    list-style: none;
+    margin: 0 0 0 4px;
+    padding: 18px 0 0 13px;
+    border-left: 1px solid #ddd;
+}
+
+.full-width-section .course-list li {
+    margin-bottom: 16px;
+}
+
+.full-width-section .course-list li:last-child {
+    margin-bottom: 0;
+}
+
+.full-width-section .course-list a {
+    display: block;
+    color: inherit;
+}
+
+.course-code {
+    display: block;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #222;
+}
+
+.course-name {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #555;
+}
+
+.full-width-section .course-list a:hover {
+    text-decoration: none;
+}
+
+.full-width-section .course-list a:hover .course-name {
+    color: #007bff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Gold star marking standout classes, explained in the note under the schedule. The star is
+   an SVG mask over a gold gradient, so it renders the same in every font and browser. */
+.standout {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: linear-gradient(160deg, #f7c948 20%, #d99a06 85%);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.2l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.2l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Sits at the top right of the course code without changing the row's height. */
+.course-code .standout {
+    width: 14px;
+    height: 14px;
+    margin: -14px 0 0 3px;
+    position: relative;
+    top: -0.3em;
+    vertical-align: baseline;
+}
+
+.full-width-section .course-note {
+    margin-top: 34px;
+    font-size: 0.95em;
+    color: #444;
+}
+
+/* Sized and lowered so the star spans exactly baseline to cap height, like a capital letter:
+   the drawn star fills 73% of its box and leaves 14% below it. */
+.course-note .standout {
+    width: 0.96em;
+    height: 0.96em;
+    margin-right: 0.35em;
+    vertical-align: -0.13em;
 }
