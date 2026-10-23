@@ -13,8 +13,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayush Barik</title>
-  <link rel="stylesheet" href="css/styles.css?v=22">
+  <link rel="stylesheet" href="css/styles.css?v=31">
   <script src="js/scholar-stats.js" defer></script>
+  <script src="assets/mosaic/mosaic-data.js" defer></script>
+  <script src="js/block-mosaic.js" defer></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/rubiks-cube.js"></script>
   <link rel="icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
   <link rel="icon" href="assets/favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="assets/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -41,7 +52,11 @@
 
   <div class="main-wrapper">
     <aside class="sidebar">
-      <img src="assets/meseek2.png" alt="Your Name" width="150" title="Made with RewardFlow [2]!">
+      <div class="profile-mosaic" id="profileMosaic" data-atlas="assets/mosaic/blocks.png">
+        <img src="assets/mosaic/mosaic.jpg" alt="Ayush Barik, built out of Minecraft blocks" width="200" height="243">
+        <span class="mosaic-label" aria-hidden="true"></span>
+      </div>
+      <p class="mosaic-caption">Mosaic of Minecraft blocks. <span class="hover-hint">Hover over it!</span><span class="touch-hint">Press and hold!</span></p>
       <h3>Ayush Barik</h3>
       <ul>
         <li>
@@ -137,6 +152,8 @@
     </ul>
 
     <h2>Teaching & Service</h2>
+    <div class="teaching-row">
+    <div class="teaching-lists">
     <p style="margin-bottom: 5px;"><strong>Undergraduate Teaching Assistant:</strong></p>
     <ul style="margin-left: 40px;">
       <li>
@@ -155,6 +172,11 @@
         <a href="https://iclr.cc/" target="_blank">ICLR</a> 2027
       </li>
     </ul>
+    </div>
+    <figure class="cube-widget" id="cubeWidget">
+      <canvas aria-label="A Rubik's Cube you can spin and solve"></canvas>
+    </figure>
+    </div>
   </div>
 
   <footer>

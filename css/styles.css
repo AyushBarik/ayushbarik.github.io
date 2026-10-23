@@ -83,12 +83,80 @@ body {
 }
 
 /* Sidebar Specific Styles */
-.sidebar > img {
+/* Profile picture made of Minecraft blocks; js/block-mosaic.js swaps the image for a canvas that
+   zooms in on hover. */
+.profile-mosaic {
+    position: relative;
+    width: 200px;
     max-width: 100%;
-    height: auto;
-    border-radius: 50%; /* Makes the image round */
     margin-bottom: 15px;
-    display: block; /* Helps with spacing */
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.profile-mosaic img,
+.profile-mosaic canvas {
+    display: block;
+    width: 100%;
+    height: auto; /* Keeps the photo's own shape */
+}
+
+.profile-mosaic canvas {
+    cursor: crosshair;
+    touch-action: none; /* Holding a finger on it pans the zoom instead of scrolling the page */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Name of the block under the cursor, styled like an in-game item tooltip. */
+.mosaic-label {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 1px 6px 2px;
+    font: 600 11px/1.4 ui-monospace, Menlo, Consolas, monospace;
+    color: #fff;
+    text-shadow: 1px 1px 0 #3f3f3f;
+    background-color: rgba(16, 0, 16, 0.92);
+    border: 2px solid #2a0a5e;
+    box-shadow: inset 0 0 0 1px #5000a0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.mosaic-label.visible {
+    opacity: 1;
+}
+
+.sidebar .mosaic-caption {
+    margin: -10px 0 15px;
+    font-size: 0.6em; /* Small enough to fit on one line under the 200px picture */
+    white-space: nowrap;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .sidebar .mosaic-caption {
+        font-size: 0.75em; /* The sidebar is full width on phones, so there's room */
+    }
+}
+
+/* Phones can't hover, so they get the press-and-hold hint instead. */
+.mosaic-caption .touch-hint {
+    display: none;
+}
+
+@media (hover: none) {
+    .mosaic-caption .hover-hint {
+        display: none;
+    }
+
+    .mosaic-caption .touch-hint {
+        display: inline;
+    }
 }
 
 .sidebar h3 {
@@ -159,6 +227,18 @@ body {
     padding-bottom: 5px;
 }
 
+/* The first heading lines up with the top of the profile picture instead of sitting below it.
+   The negative margin cancels the space the line height leaves above the capital letters. */
+.content > h2:first-child {
+    margin-top: -0.4em;
+}
+
+@media (max-width: 768px) {
+    .content > h2:first-child {
+        margin-top: 30px; /* Stacked under the sidebar, so it keeps the normal section spacing */
+    }
+}
+
 .content p {
     margin-bottom: 15px;
 }
@@ -210,10 +290,9 @@ footer {
         padding-right: 0;
         text-align: center; /* Center sidebar content */
     }
-     .sidebar > img {
+     .profile-mosaic {
         margin-left: auto;
         margin-right: auto; /* Center image */
-        max-width: 150px; /* Control image size */
     }
      .sidebar ul {
         display: inline-block; /* Center list items */
@@ -663,4 +742,52 @@ footer {
     height: 0.96em;
     margin-right: 0.35em;
     vertical-align: -0.13em;
+}
+
+/* Teaching & Service: the lists on the left, the Rubik's Cube (js/rubiks-cube.js) in the empty
+   space on the right. */
+.teaching-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.teaching-lists {
+    flex: 1;
+    min-width: 0;
+}
+
+.cube-widget {
+    flex: 0 0 156px;
+    margin: -18px 0 0; /* The canvas has empty sky above the cube; tuck it up beside the heading */
+}
+
+.cube-widget canvas {
+    display: block;
+    width: 156px;
+    height: 156px;
+    cursor: grab;
+    touch-action: none; /* Dragging turns the cube instead of scrolling the page */
+    outline: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.cube-widget.ready canvas {
+    opacity: 1;
+}
+
+.cube-widget canvas:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .teaching-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teaching-lists {
+        align-self: stretch;
+    }
 }
