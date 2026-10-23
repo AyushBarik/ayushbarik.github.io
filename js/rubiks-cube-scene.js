@@ -12,7 +12,9 @@ const PUSH_SENSITIVITY = 0.3;     // rad/s of spin added per pixel of swipe
 const SPIN_FRICTION = 2;          // how fast pushed spin decays (per second)
 const CLICK_PUSH_IMPULSE = 14;    // rad/s added by a click
 // Only swipes faster than this push the cube, so moving the mouse onto a sticker doesn't fling it.
-const SWIPE_SPEED = 600;          // px/s
+const SWIPE_SPEED = 400;          // px/s
+// Spinning faster than this (about 4 turns a second: two quick swipes) gets a "Slow Down!".
+const SLOW_DOWN_SPEED = 24;       // rad/s
 
 const TURN_TIME = 0.15;           // seconds per quarter turn (keyboard)
 const SCRAMBLE_TURN_TIME = 0.08;
@@ -34,6 +36,7 @@ const FACES = [
 
 export function mount(widget) {
   const canvas = widget.querySelector('canvas');
+  const message = widget.querySelector('.cube-message');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -161,6 +164,7 @@ export function mount(widget) {
     if (done.byHand && solving && isSolved()) {
       solving = false;
       yawVelocity += CLICK_PUSH_IMPULSE * 1.5;   // victory spin
+      showMessage('holy SHIT! HOW DID YOU SOLVE IT!', 6, true);
     }
     if (done.scramble && !queue.some((m) => m.scramble)) solving = true;
   }
@@ -382,6 +386,7 @@ export function mount(widget) {
     const friction = Math.max(0, 1 - SPIN_FRICTION * dt);
     yawVelocity *= friction;
     pitchVelocity *= friction;
+    if (Math.hypot(yawVelocity, pitchVelocity) > SLOW_DOWN_SPEED) showMessage('Slow Down!', 3);
     stepTurns(dt);
     renderer.render(scene, camera);
   }
@@ -393,6 +398,22 @@ export function mount(widget) {
       renderer.setAnimationLoop(null);
     }
   }).observe(canvas);
+
+  // A note under the cube for a few seconds. The solved message outranks "Slow Down!" (its
+  // victory spin is fast), and nothing else replaces a message while it's up.
+  let messageUntil = 0;
+  let messageImportant = false;
+  let messageTimer = 0;
+  function showMessage(text, seconds, important = false) {
+    const now = performance.now();
+    if (now < messageUntil && (messageImportant || !important)) return;
+    message.textContent = text;
+    message.classList.add('visible');
+    messageUntil = now + seconds * 1000;
+    messageImportant = important;
+    clearTimeout(messageTimer);
+    messageTimer = setTimeout(() => message.classList.remove('visible'), seconds * 1000);
+  }
 
   widget.classList.add('ready');
   // Show it's a real puzzle: it sits solved until it's actually on screen, then (after a beat, so

@@ -781,6 +781,33 @@ footer {
     cursor: grabbing;
 }
 
+/* "Slow Down!" and the solved message. It floats under the cube so the page doesn't shift. */
+.cube-widget {
+    position: relative;
+}
+
+.cube-widget .cube-message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: -4px 0 0;
+    font-size: 0.8em;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    color: #333;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-4px) scale(0.9);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.cube-widget .cube-message.visible {
+    opacity: 1;
+    transform: none;
+}
+
 @media (max-width: 768px) {
     .teaching-row {
         flex-direction: column;
