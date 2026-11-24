@@ -1,0 +1,88 @@
+% Ayush Barik, CV. Rebuilt from Desktop/college materials/Ayush_CV.pdf (Nov. 19, 2026) to match its
+% layout, with a Research Impact section added. Build: pdflatex Ayush_Barik_CV.tex
+\documentclass[11pt,letterpaper]{article}
+\usepackage[left=0.75in,right=0.75in,top=0.6in,bottom=0.6in]{geometry}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[normalem]{ulem}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section heading: bold small caps over a full-width rule.
+\newcommand{\rsection}[1]{\vspace{7pt}{\bfseries\scshape #1}\par\vspace{-6pt}\rule{\linewidth}{0.6pt}\par\vspace{2pt}}
+% Indented block under a section heading.
+\newenvironment{rblock}{\begin{list}{}{\leftmargin=1.5em\itemsep=8pt\topsep=2pt}}{\end{list}}
+% Two-line entry: bold title and italic dates, then italic role and italic place.
+\newcommand{\entry}[4]{\item \textbf{#1} \hfill \textit{#2}\\ \textit{#3} \hfill \textit{#4}}
+\newcommand{\me}{\uline{Ayush Barik}}
+\newcommand{\pub}[4]{\item \textbf{#1}\\ #2\\ #3\\ #4}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries AYUSH BARIK}\\[4pt]
+  (424) 385-8111 $\diamond$ \href{mailto:barik2@illinois.edu}{barik2@illinois.edu} $\diamond$ \href{https://ayushbarik.github.io}{ayushbarik.github.io}
+\end{center}
+
+\rsection{Research Interests}
+\hspace*{1.5em}Diffusion/Flow-Matching, Computer Vision, Audio, Algorithms, Inference, Systems for ML, Efficiency
+
+\rsection{Education}
+\begin{rblock}\item
+  \textbf{University of Illinois Urbana-Champaign} \hfill \textit{Aug. 2023 -- May 2027}\\
+  Bachelor of Science in Computer Engineering, GPA: 3.90/4.00 \hfill \textit{Illinois, USA}\\
+  James Scholar Honors Student\\
+  Advised By Prof. Fan Lai, Prof. Francis Yan, and Prof. Romit Roy Choudhury
+\end{rblock}
+
+\rsection{Research Impact}
+\begin{rblock}\item
+  Citations: \textbf{54} \quad$\cdot$\quad h-index: \textbf{3} \quad$\cdot$\quad i10-index: \textbf{1} \hfill \textit{as of Nov.\ 2026}\\[1pt]
+  {\small (Numbers derived by combining Google Scholar, Semantic Scholar, and OpenAlex, with duplicates removed.)}
+\end{rblock}
+
+\rsection{Research}
+\begin{enumerate}[leftmargin=1.5em,itemsep=4pt,topsep=3pt]
+\pub{SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving}
+  {\me$^1$, Sofia Stoica$^1$, Nikhil Sarda$^2$, Arnav Kethana$^1$, Abhinav Khanduja$^1$, Muchen Xu$^1$, Fan Lai$^1$}
+  {$^1$UIUC, $^2$Assured Intelligence}{(ICLR 2027 in-submission)}
+\pub{Efficient Video Retrieval Augmented Generation via Token Allocation}
+  {\me$^1$, Fan Lai$^1$, Francis Yan$^1$}{$^1$UIUC}{(CVPR 2027 in-submission)}
+\pub{CHOIR: Generating High-Fidelity Room Impulse Responses Using Conditional Flows}
+  {Chaitanya Amballa$^1$, \me$^1$, Steve Lin$^1$, Jim Sun$^2$, Mehmet Ergezer$^2$, Vamshi Krishna Chillara$^2$, Wontak Kim$^2$, Romit Roy Choudhury$^{1,2}$}
+  {$^1$UIUC, $^2$Amazon}{(ICASSP 2027 in-submission)}
+\pub{FlashDiff: Efficient Regional Execution and Scheduling for Diffusion Model Serving}
+  {Yaqi Qiao$^1$, Ping He$^2$, Songrun Xie$^3$, \me$^1$, Chensong Zhang$^4$, Zhengzhong Tu$^5$, Fan Lai$^1$}
+  {$^1$UIUC, $^2$Vanderbilt University, $^3$HKUST, $^4$Nvidia, $^5$Texas A\&M University}{(MLSys 2027 in-submission)}
+\pub{RewardFlow: Generate Images by Optimizing What You Reward}
+  {Onkar Susladkar$^1$, Dong-Hwan Jang$^1$, Tushar Prakash$^2$, Adheesh Juvekar$^1$, Vedant Shah$^1$, \me$^1$, Nabeel Bashir$^1$, Muntasir Wahed$^1$, Ritish Shrirao$^1$, Ismini Lourentzou$^1$}
+  {$^1$UIUC, $^2$Sony}{(CVPR 2026)}
+\pub{Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs}
+  {Xingang Guo$^1$, Yaxin Li$^1$, Xiangyi Kong$^1$, \dots, \me$^1$, \dots, Bin Hu$^1$}
+  {$^1$UIUC, $^2$University of Pennsylvania, $^3$UC San Diego, $^4$University of Michigan, $^5$Amazon AGI}{(NeurIPS 2025)}
+\end{enumerate}
+
+\newpage
+\rsection{Teaching}
+\begin{rblock}
+  \entry{ECE 220: Computer Systems \& Programming}{Fall 2024, Spring 2025, Fall 2025}{Undergrad TA, University of Illinois Urbana-Champaign}{Illinois, USA}
+  \entry{MATH 257: Linear Algebra w/ Computational Applications}{Summer 2025}{Undergrad TA, University of Illinois Urbana-Champaign}{Illinois, USA}
+  \entry{ECE 364: Programming Methods for Machine Learning}{Fall 2025, Fall 2026}{Undergrad TA, University of Illinois Urbana-Champaign}{Illinois, USA}
+  \entry{USA Computing Olympiad Tutor}{Fall 2024}{Private Online Tutor}{Online}
+  \entry{English Tutor}{Spring 2022, Fall 2022}{DMNAPK Rehabilitation Center for Young Girls}{Dhaka, Bangladesh}
+\end{rblock}
+
+\rsection{Service}
+\begin{rblock}
+  \item \textbf{Reviewer}\\ ICLR (2027)
+\end{rblock}
+
+\rsection{Awards}
+\begin{rblock}
+  \item \textbf{Illinois Engineering Achievement Scholarship} \hfill \textit{Fall 2024}
+\end{rblock}
+
+\end{document}

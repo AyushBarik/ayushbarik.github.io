@@ -1,0 +1,46 @@
+# Rebuilds data/citations.json once a day (and on demand from the Actions tab) and commits it
+# when the numbers change, which redeploys the GitHub Pages site.
+#
+# Google Scholar is included when the repository secret SERPAPI_KEY is set
+# (Settings > Secrets and variables > Actions). Without it, only Semantic Scholar and OpenAlex
+# are used. A normal day costs one SerpApi search; see scripts/update_citations.py.
+name: Update citations
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-citations
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build data/citations.json
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python3 scripts/update_citations.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/citations.json && git ls-files --error-unmatch data/citations.json >/dev/null 2>&1; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add data/citations.json
+          git commit -m "Update citation counts"
+          git push

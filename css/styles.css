@@ -190,17 +190,6 @@ body {
     object-fit: contain; /* Keeps non-square logos (Outlook) undistorted */
 }
 
-/* The email link wraps its icon, so it lines the icon up with the text the same way the list
-   items do. The scrambled address spans two lines, so the icon sits on the first one. */
-.sidebar .contact-item {
-    display: flex;
-    align-items: flex-start;
-}
-
-.sidebar .contact-item .icon {
-    margin-top: calc((1.6em - 16px) / 2);
-}
-
 .sidebar ul li a {
     text-decoration: none;
     color: #333;
@@ -342,19 +331,15 @@ footer {
     --figure-width: 0px;
 }
 
-/* arXiv link shown at the end of each paper's title line. An inline-flex box whose only
-   child is an image takes its baseline from the image's bottom edge, so the offset below
-   places the logo (and with it the button) centered on the title's cap height. */
+/* arXiv link shown at the end of each paper's title line, inside .paper-links. */
 .arxiv-button {
     display: inline-flex;
     align-items: center;
     height: 1.55em;
     padding: 0 0.45em;
-    margin-left: 6px;
     background: #b31b1b;
     border: 1px solid #b31b1b;
     border-radius: 5px;
-    vertical-align: -0.19em;
     transition: border-color 0.15s, background-color 0.15s;
 }
 
@@ -380,58 +365,40 @@ footer {
     text-decoration: none;
 }
 
-/* Research stats under the sidebar links, shown as a small card that links to the Semantic
-   Scholar profile. Numbers come from Semantic Scholar (see js/scholar-stats.js) and are
-   right-aligned in tabular figures so they line up. */
+/* Citation stats under the sidebar links, shown as a card. The numbers combine the citing-paper
+   lists of Google Scholar, Semantic Scholar and OpenAlex with duplicates removed (see
+   js/scholar-stats.js); the line under the card explains the star as a union of the sources.
+   Numbers are right-aligned in tabular figures so they line up. */
 .research-stats {
     display: block;
     margin-top: 18px;
-    padding: 10px 12px 8px;
+    padding: 10px 12px 9px;
     font-size: 0.9em;
     color: #333;
-    text-decoration: none;
-    border: 1px solid #e3e6eb;
+    background: #fff;
+    border: 1px solid #cfd3d8;
     border-radius: 6px;
-    transition: border-color 0.15s, background-color 0.15s;
-}
-
-.research-stats:hover {
-    background: #f8f9fb;
-    border-color: #c9d5ea;
 }
 
 .research-stats-head {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 6px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #eee;
-    font-size: 0.85em;
+    display: block;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #e4e6e9;
+    font-size: 1em;
     font-weight: 600;
-    color: #1f4e9c;
+    color: #222;
 }
 
-.research-stats-head img {
-    width: 14px;
-    height: 14px;
-}
-
-.research-stats-arrow {
-    margin-left: auto;
-    color: #9aa5b8;
-    transition: color 0.15s, transform 0.15s;
-}
-
-.research-stats:hover .research-stats-arrow {
-    color: #1f4e9c;
-    transform: translate(1px, -1px);
+.research-stats-star {
+    margin-left: 1px;
+    color: #999;
 }
 
 .research-stats dl div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .research-stats dt {
@@ -443,19 +410,80 @@ footer {
     font-variant-numeric: tabular-nums;
 }
 
-/* Citation count shown after the arXiv button. It shares the button's height and vertical
-   offset so the two sit on the same line; the label is set smaller inside it. */
+/* The line under the card that explains the star: "*Citations = |GS ∪ S2 ∪ OA|". The formula
+   takes the rest of the line and spreads its parts evenly, so the line spans the card's width.
+   The Google Scholar and Semantic Scholar logos link to those profiles. */
+.research-stats-foot {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 0 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.research-stats-foot-label {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.research-stats-foot-label .research-stats-star {
+    margin: 0 1px 0 0;
+}
+
+.union {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 8px;
+}
+
+.union-bar,
+.union-op {
+    font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+    line-height: 1;
+    color: #999;
+}
+
+.union-bar {
+    font-size: 1.6em;
+}
+
+.union-op {
+    font-size: 1.25em;
+}
+
+.union a {
+    display: block;
+    transition: opacity 0.15s;
+}
+
+.union a:hover {
+    opacity: 0.65;
+}
+
+.union img {
+    display: block;
+    height: 17px;
+}
+
+/* The OpenAlex mark is solid black, so it is set a little smaller, as on the citation buttons. */
+.union-oa img {
+    height: 14px;
+}
+
+/* Citation counts shown after the arXiv button, one per source. They share its height, and
+   .paper-links lines them all up; the label is set smaller inside each. */
 .citation-button {
     display: inline-flex;
     align-items: center;
     gap: 0.35em;
     height: 1.55em;
     padding: 0 0.5em;
-    margin-left: 5px;
     background: #fff;
     border: 1px solid #c9d5ea;
     border-radius: 5px;
-    vertical-align: -0.19em;
     white-space: nowrap;
     transition: border-color 0.15s, background-color 0.15s;
 }
@@ -465,12 +493,19 @@ footer {
     height: 1.05em;
 }
 
+/* The OpenAlex mark is a solid black shape, so it is set a little smaller than the Semantic
+   Scholar icon to carry the same visual weight. */
+.citation-button-oa img {
+    height: 0.9em;
+}
+
 .full-width-section a.citation-button {
     color: #1f4e9c;
 }
 
 .citation-button > span {
     font-size: 0.8em;
+    line-height: 1;
     font-weight: 500;
     font-variant-numeric: tabular-nums;
 }
@@ -482,7 +517,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .research-stats {
+    .research-stats,
+    .research-stats-foot {
         max-width: 200px;
         margin-left: auto;
         margin-right: auto;
@@ -490,8 +526,17 @@ footer {
     }
 }
 
-/* Keeps the arXiv and citation buttons together when a long title wraps. */
+/* The arXiv and citation buttons after a paper's title. A flex row centers them on one line
+   with even gaps and keeps them together when a long title wraps; vertical-align: middle
+   centers the row on the title text. There is no left margin: the space before the row in
+   the HTML separates it from the title, and drops away when the row wraps to its own line,
+   so a wrapped row starts flush with the author line below. */
 .paper-links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    vertical-align: middle;
     white-space: nowrap;
 }
 

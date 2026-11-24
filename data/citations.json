@@ -1,0 +1,540 @@
+{
+ "updated": "2026-11-24",
+ "sources": [
+  "gs",
+  "s2",
+  "oa"
+ ],
+ "totals": {
+  "citations": 54,
+  "h": 3,
+  "i10": 1
+ },
+ "papers": {
+  "paper4": {
+   "gs": 0,
+   "s2": 1,
+   "oa": 1,
+   "combined": 1
+  },
+  "paper3": {
+   "gs": 2,
+   "s2": 2,
+   "oa": 1,
+   "combined": 3
+  },
+  "paper2": {
+   "gs": 2,
+   "s2": 5,
+   "oa": 1,
+   "combined": 5
+  },
+  "paper1": {
+   "gs": 18,
+   "s2": 33,
+   "oa": 33,
+   "combined": 45
+  }
+ },
+ "gs_profile": {
+  "citations": 22,
+  "h": 2,
+  "i10": 1
+ },
+ "gs_cited_by": {
+  "paper4": 0,
+  "paper3": 2,
+  "paper2": 2,
+  "paper1": 18
+ },
+ "lists": {
+  "s2": {
+   "paper4": [
+    {
+     "title": "Reflex: Fast Robot Policy Serving by Reusing and Correcting Past Actions",
+     "doi": null,
+     "arxiv": "2611.00524"
+    }
+   ],
+   "paper3": [
+    {
+     "title": "PixelFlow: Token-Level Workload Management for Efficient Distributed DiT Serving",
+     "doi": "10.48550/arXiv.2609.20723",
+     "arxiv": "2609.20723"
+    },
+    {
+     "title": "SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving",
+     "doi": null,
+     "arxiv": "2603.07865"
+    }
+   ],
+   "paper2": [
+    {
+     "title": "From Tokens to Trajectories: Parameter-Efficient Continuous Adaptation of Unified Multimodal Models",
+     "doi": null,
+     "arxiv": "2611.05451"
+    },
+    {
+     "title": "KINESYS: Test-Time Adaptation for Reference-Based Effect Editing in Images",
+     "doi": null,
+     "arxiv": "2610.33292"
+    },
+    {
+     "title": "FASTER: Fast Adjoint Stochastic Transport for Endpoint Refinement in Reward-Guided Image Editing",
+     "doi": null,
+     "arxiv": "2610.04538"
+    },
+    {
+     "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
+     "doi": "10.48550/arXiv.2609.04190",
+     "arxiv": "2609.04190"
+    },
+    {
+     "title": "Edit the Bits, Diff the Codes: Bitwise Residual Editing for Visual Autoregressive Models",
+     "doi": "10.48550/arXiv.2606.13558",
+     "arxiv": "2606.13558"
+    }
+   ],
+   "paper1": [
+    {
+     "title": "Mechanistic Critics for Sample-Efficient NPU Design-Space Exploration",
+     "doi": null,
+     "arxiv": "2611.24733"
+    },
+    {
+     "title": "RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop",
+     "doi": null,
+     "arxiv": "2611.23855"
+    },
+    {
+     "title": "Bookkeeping Is Not Judgement: EJBench, an Engineering Judgement Benchmark Built from a Conjugate Heat Transfer Design Campaign",
+     "doi": null,
+     "arxiv": "2611.21707"
+    },
+    {
+     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+     "doi": null,
+     "arxiv": "2611.18856"
+    },
+    {
+     "title": "PLE: Physical-Engineering's Last Exam",
+     "doi": null,
+     "arxiv": "2610.30537"
+    },
+    {
+     "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
+     "doi": null,
+     "arxiv": "2610.26861"
+    },
+    {
+     "title": "Towards a Benchmark for Fire Safety Code Interpretation in the Hong Kong AEC Industry",
+     "doi": "10.18653/2026.lt4cpr-1.1",
+     "arxiv": "2610.16127"
+    },
+    {
+     "title": "FDE-Bench: Evaluating End-to-End Delivery from Underspecified Real-World Business Requests",
+     "doi": null,
+     "arxiv": "2610.14539"
+    },
+    {
+     "title": "Vibe Building",
+     "doi": null,
+     "arxiv": "2610.08156"
+    },
+    {
+     "title": "Language models can notice an impossible engineering problem yet still report it as solved",
+     "doi": null,
+     "arxiv": "2610.06668"
+    },
+    {
+     "title": "NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents",
+     "doi": null,
+     "arxiv": "2610.03631"
+    },
+    {
+     "title": "SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation",
+     "doi": null,
+     "arxiv": "2610.02304"
+    },
+    {
+     "title": "Open-Vocabulary, Context-Aware Robot Navigation on Construction Sites: Integrating LLM-Driven Value Map Composition with Hierarchical Scene Graphs",
+     "doi": "10.1061/9780784486979.022",
+     "arxiv": null
+    },
+    {
+     "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
+     "doi": "10.48550/arXiv.2608.14441",
+     "arxiv": "2608.14441"
+    },
+    {
+     "title": "Benchmarking and Reasoning Distillation of Large Language Models for Feedback Controller Design in Complex Dynamical Systems",
+     "doi": "10.48550/arXiv.2608.07004",
+     "arxiv": "2608.07004"
+    },
+    {
+     "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
+     "doi": "10.48550/arXiv.2607.14896",
+     "arxiv": "2607.14896"
+    },
+    {
+     "title": "Large Language Models and their Awareness of Mechanics and Spatial Geometry",
+     "doi": "10.48550/arXiv.2608.14615",
+     "arxiv": "2608.14615"
+    },
+    {
+     "title": "Buildrix: An Open Agentic AI Benchmark for Building Engineering",
+     "doi": null,
+     "arxiv": "2606.25139"
+    },
+    {
+     "title": "Alleviating Overconfidence in Long-Tailed Time Series Classification with Hierarchical Reverse Distillation",
+     "doi": "10.1109/IJCNN69854.2026.11729952",
+     "arxiv": null
+    },
+    {
+     "title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis",
+     "doi": "10.48550/arXiv.2605.28978",
+     "arxiv": "2605.28978"
+    },
+    {
+     "title": "EngiAI: Capability-Based Evaluation of Tool-Connected LLM Agents for Engineering Design",
+     "doi": null,
+     "arxiv": "2605.19743"
+    },
+    {
+     "title": "TSNBench: Benchmarking LLM Proficiency in Time-Sensitive Networking",
+     "doi": "10.48550/arXiv.2605.09481",
+     "arxiv": "2605.09481"
+    },
+    {
+     "title": "Towards Optimizing LLM-based Sensor Data Processing: An Empirical Study of Evolutionary Algorithms",
+     "doi": "10.1109/FMSys72110.2026.00019",
+     "arxiv": null
+    },
+    {
+     "title": "AIGC-Enabled Teaching Paradigm for Complex Engineering Problem-Solving in Rail Transit Signal and Control: Classroom Reconstruction Based on the DNA Framework",
+     "doi": "10.1145/3828183.3828476",
+     "arxiv": null
+    },
+    {
+     "title": "OC-Distill: Ontology-aware Contrastive Learning with Cross-Modal Distillation for ICU Risk Prediction",
+     "doi": "10.48550/arXiv.2604.16878",
+     "arxiv": "2604.16878"
+    },
+    {
+     "title": "Frontier-Eng: Benchmarking Self-Evolving Agents on Real-World Engineering Tasks with Generative Optimization",
+     "doi": "10.48550/arXiv.2604.12290",
+     "arxiv": "2604.12290"
+    },
+    {
+     "title": "Supervising Ralph Wiggum: Exploring a Metacognitive Co-Regulation Agentic AI Loop for Engineering Design",
+     "doi": "10.48550/arXiv.2603.24768",
+     "arxiv": "2603.24768"
+    },
+    {
+     "title": "Engineering Reasoning and Instruction (ERI) Benchmark: A Large Taxonomy-driven Dataset for Foundation Models and Agents",
+     "doi": "10.1016/j.cie.2026.112333",
+     "arxiv": "2603.02239"
+    },
+    {
+     "title": "Automating Automation: Large Language Models for Control Design [President’s Message]",
+     "doi": "10.1109/mcs.2025.3629940",
+     "arxiv": null
+    },
+    {
+     "title": "TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models",
+     "doi": "10.48550/arXiv.2601.18744",
+     "arxiv": "2601.18744"
+    },
+    {
+     "title": "AnalogSAGE: Self-evolving Analog Design Multi-Agents with Stratified Memory and Grounded Experience",
+     "doi": "10.48550/arXiv.2512.22435",
+     "arxiv": "2512.22435"
+    },
+    {
+     "title": "Beyond Seeing: Evaluating Multimodal LLMs on Tool-Enabled Image Perception, Transformation, and Reasoning",
+     "doi": "10.48550/arXiv.2510.12712",
+     "arxiv": "2510.12712"
+    },
+    {
+     "title": "EngTrace: A Symbolic Benchmark for Verifiable Process Supervision of Engineering Reasoning",
+     "doi": null,
+     "arxiv": null
+    }
+   ]
+  },
+  "oa": {
+   "paper4": [
+    {
+     "title": "Reflex: Fast Robot Policy Serving by Reusing and Correcting Past Actions",
+     "doi": "https://doi.org/10.48550/arxiv.2611.00524"
+    }
+   ],
+   "paper3": [
+    {
+     "title": "PixelFlow: Token-Level Workload Management for Efficient Distributed DiT Serving",
+     "doi": "https://doi.org/10.48550/arxiv.2609.20723"
+    }
+   ],
+   "paper2": [
+    {
+     "title": "KINESYS: Test-Time Adaptation for Reference-Based Effect Editing in Images",
+     "doi": "https://doi.org/10.48550/arxiv.2610.33292"
+    }
+   ],
+   "paper1": [
+    {
+     "title": "TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models",
+     "doi": "https://doi.org/10.48550/arxiv.2601.18744"
+    },
+    {
+     "title": "Grounding LLMs in Scientific Discovery via Embodied Actions",
+     "doi": "https://doi.org/10.48550/arxiv.2602.20639"
+    },
+    {
+     "title": "Large language model assisted human-AI collaborative development of analytical inverse kinematics solvers for robot manipulators",
+     "doi": "https://doi.org/10.1016/j.mechmachtheory.2026.106392"
+    },
+    {
+     "title": "Engineering Reasoning and Instruction (ERI) benchmark: a large taxonomy-driven dataset for foundation models and agents",
+     "doi": "https://doi.org/10.1016/j.cie.2026.112333"
+    },
+    {
+     "title": "FORGE: Fine-grained multimodal evaluation for manufacturing quality assurance",
+     "doi": "https://doi.org/10.18653/2026.findings-emnlp.888"
+    },
+    {
+     "title": "Alleviating Overconfidence in Long-Tailed Time Series Classification with Hierarchical Reverse Distillation",
+     "doi": "https://doi.org/10.1109/ijcnn69854.2026.11729952"
+    },
+    {
+     "title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+     "doi": "https://doi.org/10.48550/arxiv.2609.24972"
+    },
+    {
+     "title": "Frontier-Eng: Benchmarking Self-Evolving Agents on Real-World Engineering Tasks with Generative Optimization",
+     "doi": "https://doi.org/10.48550/arxiv.2604.12290"
+    },
+    {
+     "title": "AnalogSAGE: Self-evolving Analog Design Multi-Agents with Stratified Memory and Grounded Experience",
+     "doi": "https://doi.org/10.48550/arxiv.2512.22435"
+    },
+    {
+     "title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis",
+     "doi": "https://doi.org/10.48550/arxiv.2605.28978"
+    },
+    {
+     "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
+     "doi": "https://doi.org/10.48550/arxiv.2607.14896"
+    },
+    {
+     "title": "Language models can notice an impossible engineering problem yet still report it as solved",
+     "doi": "https://doi.org/10.48550/arxiv.2610.06668"
+    },
+    {
+     "title": "TSNBench: Benchmarking LLM Proficiency in Time-Sensitive Networking",
+     "doi": "https://doi.org/10.48550/arxiv.2605.09481"
+    },
+    {
+     "title": "FlowPilot: A Multi-Agent AI System for Continuous Flow Chemistry Process Design",
+     "doi": "https://doi.org/10.26434/chemrxiv.15003445/v1"
+    },
+    {
+     "title": "Benchmarking and Reasoning Distillation of Large Language Models for Feedback Controller Design in Complex Dynamical Systems",
+     "doi": "https://doi.org/10.48550/arxiv.2608.07004"
+    },
+    {
+     "title": "Large Language Models and their Awareness of Mechanics and Spatial Geometry",
+     "doi": "https://doi.org/10.48550/arxiv.2608.14615"
+    },
+    {
+     "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
+     "doi": "https://doi.org/10.48550/arxiv.2610.26861"
+    },
+    {
+     "title": "PLE: Physical-Engineering's Last Exam",
+     "doi": "https://doi.org/10.48550/arxiv.2610.30537"
+    },
+    {
+     "title": "Automating Automation: Large Language Models for Control Design [President’s Message]",
+     "doi": "https://doi.org/10.1109/mcs.2025.3629940"
+    },
+    {
+     "title": "Pattern-Guided Design Space Exploration for FPGA Accelerator Design",
+     "doi": "https://doi.org/10.48550/arxiv.2607.15068"
+    },
+    {
+     "title": "VEHBench: A Stage-Local Diagnostic Benchmark for LLM-Assisted Vibration Energy Harvester Design",
+     "doi": "https://doi.org/10.48550/arxiv.2607.18181"
+    },
+    {
+     "title": "Towards Optimizing LLM-based Sensor Data Processing: An Empirical Study of Evolutionary Algorithms",
+     "doi": "https://doi.org/10.1109/fmsys72110.2026.00019"
+    },
+    {
+     "title": "Open-Vocabulary, Context-Aware Robot Navigation on Construction Sites: Integrating LLM-Driven Value Map Composition with Hierarchical Scene Graphs",
+     "doi": "https://doi.org/10.1061/9780784486979.022"
+    },
+    {
+     "title": "AIGC-Enabled Teaching Paradigm for Complex Engineering Problem-Solving in Rail Transit Signal and Control: Classroom Reconstruction Based on the DNA Framework",
+     "doi": "https://doi.org/10.1145/3828183.3828476"
+    },
+    {
+     "title": "NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents",
+     "doi": "https://doi.org/10.48550/arxiv.2610.03631"
+    },
+    {
+     "title": "Vibe Building",
+     "doi": "https://doi.org/10.48550/arxiv.2610.08156"
+    },
+    {
+     "title": "FDE-Bench: Evaluating End-to-End Delivery from Underspecified Real-World Business Requests",
+     "doi": "https://doi.org/10.48550/arxiv.2610.14539"
+    },
+    {
+     "title": "Towards a Benchmark for Fire Safety Code Interpretation in the Hong Kong AEC Industry",
+     "doi": "https://doi.org/10.18653/2026.lt4cpr-1.1"
+    },
+    {
+     "title": "Nuha: Clean-Room Verification of the Reference Solutions of a Eurocode Structural Benchmark",
+     "doi": "https://doi.org/10.5281/zenodo.24281664"
+    },
+    {
+     "title": "IndustrialKnowEval: A Benchmark for Evaluating Multi-Level Industrial Knowledge in LLMs",
+     "doi": "https://doi.org/10.48550/arxiv.2611.20695"
+    },
+    {
+     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+     "doi": "https://doi.org/10.48550/arxiv.2611.18856"
+    },
+    {
+     "title": "Mechanistic Critics for Sample-Efficient NPU Design-Space Exploration",
+     "doi": "https://doi.org/10.48550/arxiv.2611.24733"
+    },
+    {
+     "title": "RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop",
+     "doi": "https://doi.org/10.48550/arxiv.2611.23855"
+    }
+   ]
+  },
+  "gs": {
+   "paper4": [],
+   "paper3": [
+    {
+     "title": "PixelFlow: Token-Level Workload Management for Efficient Distributed DiT Serving",
+     "arxiv": "2609.20723",
+     "doi": null
+    },
+    {
+     "title": "Budget-Constrained Preemptive Scheduling of Agentic Video Generation Pipelines with Resumable Stages",
+     "arxiv": null,
+     "doi": null
+    }
+   ],
+   "paper2": [
+    {
+     "title": "From Tokens to Trajectories: Parameter-Efficient Continuous Adaptation of Unified Multimodal Models",
+     "arxiv": "2611.05451",
+     "doi": null
+    },
+    {
+     "title": "FASTER: Fast Adjoint Stochastic Transport for Endpoint Refinement in Reward-Guided Image Editing",
+     "arxiv": "2610.04538",
+     "doi": null
+    }
+   ],
+   "paper1": [
+    {
+     "title": "Language models can notice an impossible engineering problem yet still report it as solved",
+     "arxiv": "2610.06668",
+     "doi": null
+    },
+    {
+     "title": "Benchmarking and Reasoning Distillation of Large Language Models for Feedback Controller Design in Complex Dynamical Systems",
+     "arxiv": "2608.07004",
+     "doi": null
+    },
+    {
+     "title": "Alleviating Overconfidence in Long-Tailed Time Series Classification with Hierarchical Reverse Distillation",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "AnalogSAGE: Self-evolving Analog Design Multi-Agents with Stratified Memory and Grounded Experience",
+     "arxiv": "2512.22435",
+     "doi": null
+    },
+    {
+     "title": "Large Language Models and their Awareness of Mechanics and Spatial Geometry",
+     "arxiv": "2608.14615",
+     "doi": null
+    },
+    {
+     "title": "From Predict to Generate: A Cross-Layer Survey of Generative AI for IC Design and Manufacturing",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "Towards Optimizing LLM-based Sensor Data Processing: An Empirical Study of Evolutionary Algorithms",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "PLE: Physical-Engineering's Last Exam",
+     "arxiv": "2610.30537",
+     "doi": null
+    },
+    {
+     "title": "NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents",
+     "arxiv": "2610.03631",
+     "doi": null
+    },
+    {
+     "title": "VEHBench: A Stage-Local Diagnostic Benchmark for LLM-Assisted Vibration Energy Harvester Design",
+     "arxiv": "2607.18181",
+     "doi": null
+    },
+    {
+     "title": "Engineering Reasoning and Instruction (ERI) Benchmark: A Large Taxonomy-driven Dataset for Foundation Models and Agents",
+     "arxiv": "2603.02239",
+     "doi": null
+    },
+    {
+     "title": "IndustrialKnowEval: A Benchmark for Evaluating Multi-Level Industrial Knowledge in LLMs",
+     "arxiv": "2611.20695",
+     "doi": null
+    },
+    {
+     "title": "Open-Vocabulary, Context-Aware Robot Navigation on Construction Sites: Integrating LLM-Driven Value Map Composition with Hierarchical Scene Graphs",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "Pattern-Guided Design Space Exploration for FPGA Accelerator Design",
+     "arxiv": "2607.15068",
+     "doi": null
+    },
+    {
+     "title": "AIGC-Enabled Teaching Paradigm for Complex Engineering Problem-Solving in Rail Transit Signal and Control: Classroom Reconstruction Based on the DNA …",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "WHERE WE ARE IN THE PATH TOWARDS AGI IN KINEMATICS?",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "Clean-Room Verification of the Reference Solutions of a Eurocode Structural Benchmark",
+     "arxiv": null,
+     "doi": null
+    },
+    {
+     "title": "Safety in Controls",
+     "arxiv": null,
+     "doi": null
+    }
+   ]
+  }
+ }
+}
