@@ -867,3 +867,68 @@ footer {
         align-self: stretch;
     }
 }
+
+/* Paper pages (research/<paper>/index.html). One page per paper so search engines and AI
+   search tools have a plain-text page to find: title, authors, summary, abstract, BibTeX. */
+.nav-logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.full-width-section.paper-page {
+    margin-top: 0;
+}
+
+.paper-page h1 {
+    font-size: 1.6em;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.paper-page .paper-venue {
+    color: #2596be;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.paper-page .paper-authors {
+    font-size: 0.95em;
+    color: #4d4949;
+}
+
+.paper-page .paper-affiliations {
+    font-size: 0.85em;
+    color: #4d4949;
+    margin-bottom: 12px;
+}
+
+.paper-page .paper-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.paper-page .paper-actions .link-button {
+    margin-left: 0;
+    vertical-align: 0;
+}
+
+.paper-page .research-figure {
+    margin: 20px 0 0;
+}
+
+.paper-page p {
+    margin-bottom: 15px;
+}
+
+.paper-page pre.bibtex {
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 0.8em;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}

@@ -1,0 +1,5 @@
+# All crawlers, including search engines and AI search bots, may read the whole site.
+User-agent: *
+Allow: /
+
+Sitemap: https://ayushbarik.github.io/sitemap.xml

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving</title>
+  <meta name="description" content="SoundWeaver makes text-to-audio (T2A) diffusion models generate audio faster, with no retraining. Instead of starting every request from pure noise, it stitches together segments of cached audio clips that match the new prompt, then starts diffusion partway through so the early denoising steps...">
+  <meta name="keywords" content="text-to-audio, audio diffusion, diffusion serving, inference acceleration, warm-start, caching">
+  <link rel="canonical" href="https://ayushbarik.github.io/research/soundweaver/">
+
+  <!-- Bibliographic metadata read by Google Scholar and reference managers -->
+  <meta name="citation_title" content="SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving">
+  <meta name="citation_author" content="Ayush Barik">
+  <meta name="citation_author" content="Sofia Stoica">
+  <meta name="citation_author" content="Nikhil Sarda">
+  <meta name="citation_author" content="Arnav Kethana">
+  <meta name="citation_author" content="Abhinav Khanduja">
+  <meta name="citation_author" content="Muchen Xu">
+  <meta name="citation_author" content="Fan Lai">
+  <meta name="citation_publication_date" content="2026/03/09">
+  <meta name="citation_pdf_url" content="https://ayushbarik.github.io/assets/papers/soundweaver.pdf">
+  <meta name="citation_abstract_html_url" content="https://ayushbarik.github.io/research/soundweaver/">
+  <meta name="citation_arxiv_id" content="2603.07865">
+
+  <!-- Link previews -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving">
+  <meta property="og:description" content="SoundWeaver makes text-to-audio (T2A) diffusion models generate audio faster, with no retraining. Instead of starting every request from pure noise, it stitches together segments of cached audio clips that match the new prompt, then starts diffusion partway through so the early denoising steps...">
+  <meta property="og:url" content="https://ayushbarik.github.io/research/soundweaver/">
+  <meta property="og:image" content="https://ayushbarik.github.io/assets/soundweaver-paper.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving",
+  "name": "SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving",
+  "url": "https://ayushbarik.github.io/research/soundweaver/",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Ayush Barik"
+    },
+    {
+      "@type": "Person",
+      "name": "Sofia Stoica"
+    },
+    {
+      "@type": "Person",
+      "name": "Nikhil Sarda"
+    },
+    {
+      "@type": "Person",
+      "name": "Arnav Kethana"
+    },
+    {
+      "@type": "Person",
+      "name": "Abhinav Khanduja"
+    },
+    {
+      "@type": "Person",
+      "name": "Muchen Xu"
+    },
+    {
+      "@type": "Person",
+      "name": "Fan Lai"
+    }
+  ],
+  "datePublished": "2026-03-09",
+  "abstract": "Text-to-audio (T2A) diffusion models generate high-quality audio but require tens of neural function evaluations (NFEs), resulting in substantial inference latency. Existing acceleration methods primarily optimize each generation trajectory independently, even when reusable acoustic structure exists in prior examples. We introduce SoundWeaver, the first training-free framework for compositional cross example acoustic reuse. Rather than generating from pure noise, SoundWeaver constructs a prompt-conditioned acoustic prior from segments distributed across cached audios and warm-starts diffusion from an intermediate noise level. We introduce an Acoustic Composition Graph (ACG), which uses neural codec representations and segment-level identification to identify candidate cross-cache transitions and structured path search to jointly optimize prompt relevance and acoustic continuity. We further establish a warm-start error bound showing how prior quality and diffusion SNR jointly govern the admissible skip depth, motivating an adaptive contextual-bandit Skip Gater that selects the warm-start level for each request. Across T2A diffusion backbones, SoundWeaver achieves 1.48-3.74x generation speedup with only a 1K-clip cache while improving generation quality.",
+  "keywords": "text-to-audio, audio diffusion, diffusion serving, inference acceleration, warm-start, caching",
+  "sameAs": [
+    "https://arxiv.org/abs/2603.07865",
+    "https://www.semanticscholar.org/paper/a18f85f3e4593a99fcdeede7887d23d88017cabb"
+  ],
+  "image": "https://ayushbarik.github.io/assets/soundweaver-paper.png"
+}
+  </script>
+
+  <link rel="stylesheet" href="../../css/styles.css?v=34">
+  <link rel="icon" href="../../assets/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../assets/favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="../../assets/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../../assets/favicon_io/apple-touch-icon.png">
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="../../index.html">Ayush Barik</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../../Projects.html">Projects</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../classesnbooks.html">Classes</a></li>
+          <li><a href="../../assets/Ayush_Barik_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="full-width-section paper-page">
+    <article>
+      <h1>SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving</h1>
+      <p class="paper-venue">Preprint, under review</p>
+      <p class="paper-authors"><strong>Ayush Barik<sup>1</sup></strong>, Sofia Stoica<sup>1</sup>, Nikhil Sarda<sup>2</sup>, Arnav Kethana<sup>1</sup>, Abhinav Khanduja<sup>1</sup>, Muchen Xu<sup>1</sup>, Fan Lai<sup>1</sup></p>
+      <p class="paper-affiliations"><sup>1</sup>University of Illinois Urbana-Champaign (UIUC), <sup>2</sup>Assured Intelligence</p>
+      <div class="paper-actions">
+        <a class="arxiv-button" href="https://arxiv.org/abs/2603.07865" target="_blank" rel="noopener" aria-label="arXiv"><img src="../../assets/arxiv-logo.svg" alt="arXiv"></a>
+        <a class="link-button" href="../../assets/papers/soundweaver.pdf" target="_blank" rel="noopener"><span>PDF</span></a>
+        <a class="link-button" href="https://www.semanticscholar.org/paper/a18f85f3e4593a99fcdeede7887d23d88017cabb" target="_blank" rel="noopener"><span>Semantic Scholar</span></a>
+      </div>
+
+      <img class="research-figure figure-soundweaver" src="../../assets/soundweaver-paper.png" alt="SoundWeaver overview figure">
+
+      <h2>In short</h2>
+      <p>SoundWeaver makes text-to-audio (T2A) diffusion models generate audio faster, with no retraining. Instead of starting every request from pure noise, it stitches together segments of cached audio clips that match the new prompt, then starts diffusion partway through so the early denoising steps can be skipped. An Acoustic Composition Graph picks which cached segments to join so the result fits the prompt and sounds continuous, and a contextual-bandit Skip Gater decides how many steps each request can safely skip. With a cache of only 1,000 clips, SoundWeaver speeds up generation by 1.48&ndash;3.74&times; while also improving audio quality.</p>
+
+      <h2>Abstract</h2>
+      <p>Text-to-audio (T2A) diffusion models generate high-quality audio but require tens of neural function evaluations (NFEs), resulting in substantial inference latency. Existing acceleration methods primarily optimize each generation trajectory independently, even when reusable acoustic structure exists in prior examples. We introduce SoundWeaver, the first training-free framework for compositional cross example acoustic reuse. Rather than generating from pure noise, SoundWeaver constructs a prompt-conditioned acoustic prior from segments distributed across cached audios and warm-starts diffusion from an intermediate noise level. We introduce an Acoustic Composition Graph (ACG), which uses neural codec representations and segment-level identification to identify candidate cross-cache transitions and structured path search to jointly optimize prompt relevance and acoustic continuity. We further establish a warm-start error bound showing how prior quality and diffusion SNR jointly govern the admissible skip depth, motivating an adaptive contextual-bandit Skip Gater that selects the warm-start level for each request. Across T2A diffusion backbones, SoundWeaver achieves 1.48-3.74x generation speedup with only a 1K-clip cache while improving generation quality.</p>
+
+      <h2>Citation</h2>
+      <pre class="bibtex">@article{barik2026soundweaver,
+  title={SoundWeaver: Compositional Warm-Starting for Text-to-Audio Diffusion Serving},
+  author={Ayush Barik and Sofia Stoica and Nikhil Sarda and Arnav Kethana and Abhinav Khanduja and Muchen Xu and Fan Lai},
+  journal={arXiv preprint arXiv:2603.07865},
+  year={2026}
+}</pre>
+    </article>
+  </main>
+
+  <footer>
+    <a href="../../index.html#paper4">&larr; All research by Ayush Barik</a>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs</title>
+  <meta name="description" content="EngDesign is a benchmark that tests whether large language models (LLMs) can do real engineering design, not just answer textbook questions. Its tasks cover nine engineering domains, including electrical, mechanical, aerospace, civil and computer engineering, and each task states its design...">
+  <meta name="keywords" content="LLM benchmark, engineering design, large language models, simulation-based evaluation, engineering AGI">
+  <link rel="canonical" href="https://ayushbarik.github.io/research/engdesign/">
+
+  <!-- Bibliographic metadata read by Google Scholar and reference managers -->
+  <meta name="citation_title" content="Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs">
+  <meta name="citation_author" content="Xingang Guo">
+  <meta name="citation_author" content="Yaxin Li">
+  <meta name="citation_author" content="Xiangyi Kong">
+  <meta name="citation_author" content="Yilan Jiang">
+  <meta name="citation_author" content="Xiayu Zhao">
+  <meta name="citation_author" content="Zhihua Gong">
+  <meta name="citation_author" content="Yufan Zhang">
+  <meta name="citation_author" content="Daixuan Li">
+  <meta name="citation_author" content="Tianle Sang">
+  <meta name="citation_author" content="Beixiao Zhu">
+  <meta name="citation_author" content="Gregory Jun">
+  <meta name="citation_author" content="Yingbing Huang">
+  <meta name="citation_author" content="Yiqi Liu">
+  <meta name="citation_author" content="Yuqi Xue">
+  <meta name="citation_author" content="Rahul Dev Kundu">
+  <meta name="citation_author" content="Qi Jian Lim">
+  <meta name="citation_author" content="Yizhou Zhao">
+  <meta name="citation_author" content="Luke Alexander Granger">
+  <meta name="citation_author" content="Mohamed Badr Younis">
+  <meta name="citation_author" content="Darioush Keivan">
+  <meta name="citation_author" content="Nippun Sabharwal">
+  <meta name="citation_author" content="Shreyanka Sinha">
+  <meta name="citation_author" content="Prakhar Agarwal">
+  <meta name="citation_author" content="Kojo Vandyck">
+  <meta name="citation_author" content="Hanlin Mai">
+  <meta name="citation_author" content="Zichen Wang">
+  <meta name="citation_author" content="Aditya Venkatesh">
+  <meta name="citation_author" content="Ayush Barik">
+  <meta name="citation_author" content="Jiankun Yang">
+  <meta name="citation_author" content="Chongying Yue">
+  <meta name="citation_author" content="Jingjie He">
+  <meta name="citation_author" content="Libin Wang">
+  <meta name="citation_author" content="Licheng Xu">
+  <meta name="citation_author" content="Hao Chen">
+  <meta name="citation_author" content="Jinwen Wang">
+  <meta name="citation_author" content="Liujun Xu">
+  <meta name="citation_author" content="Rushabh Shetty">
+  <meta name="citation_author" content="Ziheng Guo">
+  <meta name="citation_author" content="Dahui Song">
+  <meta name="citation_author" content="Manvi Jha">
+  <meta name="citation_author" content="Weijie Liang">
+  <meta name="citation_author" content="Weiman Yan">
+  <meta name="citation_author" content="Bryan Zhang">
+  <meta name="citation_author" content="Sahil Bhandary Karnoor">
+  <meta name="citation_author" content="Jialiang Zhang">
+  <meta name="citation_author" content="Rutva Pandya">
+  <meta name="citation_author" content="Xinyi Gong">
+  <meta name="citation_author" content="Mithesh Ballae Ganesh">
+  <meta name="citation_author" content="Feize Shi">
+  <meta name="citation_author" content="Ruiling Xu">
+  <meta name="citation_author" content="Yifan Zhang">
+  <meta name="citation_author" content="Yanfeng Ouyang">
+  <meta name="citation_author" content="Lianhui Qin">
+  <meta name="citation_author" content="Elyse Rosenbaum">
+  <meta name="citation_author" content="Corey Snyder">
+  <meta name="citation_author" content="Peter Seiler">
+  <meta name="citation_author" content="Geir Dullerud">
+  <meta name="citation_author" content="Xiaojia Shelly Zhang">
+  <meta name="citation_author" content="Zuofu Cheng">
+  <meta name="citation_author" content="Pavan Kumar Hanumolu">
+  <meta name="citation_author" content="Jian Huang">
+  <meta name="citation_author" content="Mayank Kulkarni">
+  <meta name="citation_author" content="Mahdi Namazifar">
+  <meta name="citation_author" content="Huan Zhang">
+  <meta name="citation_author" content="Bin Hu">
+  <meta name="citation_publication_date" content="2025/07/01">
+  <meta name="citation_pdf_url" content="https://ayushbarik.github.io/assets/papers/engdesign.pdf">
+  <meta name="citation_abstract_html_url" content="https://ayushbarik.github.io/research/engdesign/">
+  <meta name="citation_arxiv_id" content="2509.16204">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems (NeurIPS 2025), Datasets and Benchmarks Track">
+
+  <!-- Link previews -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs">
+  <meta property="og:description" content="EngDesign is a benchmark that tests whether large language models (LLMs) can do real engineering design, not just answer textbook questions. Its tasks cover nine engineering domains, including electrical, mechanical, aerospace, civil and computer engineering, and each task states its design...">
+  <meta property="og:url" content="https://ayushbarik.github.io/research/engdesign/">
+  <meta property="og:image" content="https://ayushbarik.github.io/assets/EngDesign.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs",
+  "name": "Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs",
+  "url": "https://ayushbarik.github.io/research/engdesign/",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Xingang Guo"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaxin Li"
+    },
+    {
+      "@type": "Person",
+      "name": "Xiangyi Kong"
+    },
+    {
+      "@type": "Person",
+      "name": "Yilan Jiang"
+    },
+    {
+      "@type": "Person",
+      "name": "Xiayu Zhao"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhihua Gong"
+    },
+    {
+      "@type": "Person",
+      "name": "Yufan Zhang"
+    },
+    {
+      "@type": "Person",
+      "name": "Daixuan Li"
+    },
+    {
+      "@type": "Person",
+      "name": "Tianle Sang"
+    },
+    {
+      "@type": "Person",
+      "name": "Beixiao Zhu"
+    },
+    {
+      "@type": "Person",
+      "name": "Gregory Jun"
+    },
+    {
+      "@type": "Person",
+      "name": "Yingbing Huang"
+    },
+    {
+      "@type": "Person",
+      "name": "Yiqi Liu"
+    },
+    {
+      "@type": "Person",
+      "name": "Yuqi Xue"
+    },
+    {
+      "@type": "Person",
+      "name": "Rahul Dev Kundu"
+    },
+    {
+      "@type": "Person",
+      "name": "Qi Jian Lim"
+    },
+    {
+      "@type": "Person",
+      "name": "Yizhou Zhao"
+    },
+    {
+      "@type": "Person",
+      "name": "Luke Alexander Granger"
+    },
+    {
+      "@type": "Person",
+      "name": "Mohamed Badr Younis"
+    },
+    {
+      "@type": "Person",
+      "name": "Darioush Keivan"
+    },
+    {
+      "@type": "Person",
+      "name": "Nippun Sabharwal"
+    },
+    {
+      "@type": "Person",
+      "name": "Shreyanka Sinha"
+    },
+    {
+      "@type": "Person",
+      "name": "Prakhar Agarwal"
+    },
+    {
+      "@type": "Person",
+      "name": "Kojo Vandyck"
+    },
+    {
+      "@type": "Person",
+      "name": "Hanlin Mai"
+    },
+    {
+      "@type": "Person",
+      "name": "Zichen Wang"
+    },
+    {
+      "@type": "Person",
+      "name": "Aditya Venkatesh"
+    },
+    {
+      "@type": "Person",
+      "name": "Ayush Barik"
+    },
+    {
+      "@type": "Person",
+      "name": "Jiankun Yang"
+    },
+    {
+      "@type": "Person",
+      "name": "Chongying Yue"
+    },
+    {
+      "@type": "Person",
+      "name": "Jingjie He"
+    },
+    {
+      "@type": "Person",
+      "name": "Libin Wang"
+    },
+    {
+      "@type": "Person",
+      "name": "Licheng Xu"
+    },
+    {
+      "@type": "Person",
+      "name": "Hao Chen"
+    },
+    {
+      "@type": "Person",
+      "name": "Jinwen Wang"
+    },
+    {
+      "@type": "Person",
+      "name": "Liujun Xu"
+    },
+    {
+      "@type": "Person",
+      "name": "Rushabh Shetty"
+    },
+    {
+      "@type": "Person",
+      "name": "Ziheng Guo"
+    },
+    {
+      "@type": "Person",
+      "name": "Dahui Song"
+    },
+    {
+      "@type": "Person",
+      "name": "Manvi Jha"
+    },
+    {
+      "@type": "Person",
+      "name": "Weijie Liang"
+    },
+    {
+      "@type": "Person",
+      "name": "Weiman Yan"
+    },
+    {
+      "@type": "Person",
+      "name": "Bryan Zhang"
+    },
+    {
+      "@type": "Person",
+      "name": "Sahil Bhandary Karnoor"
+    },
+    {
+      "@type": "Person",
+      "name": "Jialiang Zhang"
+    },
+    {
+      "@type": "Person",
+      "name": "Rutva Pandya"
+    },
+    {
+      "@type": "Person",
+      "name": "Xinyi Gong"
+    },
+    {
+      "@type": "Person",
+      "name": "Mithesh Ballae Ganesh"
+    },
+    {
+      "@type": "Person",
+      "name": "Feize Shi"
+    },
+    {
+      "@type": "Person",
+      "name": "Ruiling Xu"
+    },
+    {
+      "@type": "Person",
+      "name": "Yifan Zhang"
+    },
+    {
+      "@type": "Person",
+      "name": "Yanfeng Ouyang"
+    },
+    {
+      "@type": "Person",
+      "name": "Lianhui Qin"
+    },
+    {
+      "@type": "Person",
+      "name": "Elyse Rosenbaum"
+    },
+    {
+      "@type": "Person",
+      "name": "Corey Snyder"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Seiler"
+    },
+    {
+      "@type": "Person",
+      "name": "Geir Dullerud"
+    },
+    {
+      "@type": "Person",
+      "name": "Xiaojia Shelly Zhang"
+    },
+    {
+      "@type": "Person",
+      "name": "Zuofu Cheng"
+    },
+    {
+      "@type": "Person",
+      "name": "Pavan Kumar Hanumolu"
+    },
+    {
+      "@type": "Person",
+      "name": "Jian Huang"
+    },
+    {
+      "@type": "Person",
+      "name": "Mayank Kulkarni"
+    },
+    {
+      "@type": "Person",
+      "name": "Mahdi Namazifar"
+    },
+    {
+      "@type": "Person",
+      "name": "Huan Zhang"
+    },
+    {
+      "@type": "Person",
+      "name": "Bin Hu"
+    }
+  ],
+  "datePublished": "2025-07-01",
+  "abstract": "Modern engineering, spanning electrical, mechanical, aerospace, civil, and computer disciplines, stands as a cornerstone of human civilization and the foundation of our society. However, engineering design poses a fundamentally different challenge for large language models (LLMs) compared with traditional textbook-style problem solving or factual question answering. Although existing benchmarks have driven progress in areas such as language understanding, code synthesis, and scientific problem solving, real-world engineering design demands the synthesis of domain knowledge, navigation of complex trade-offs, and management of the tedious processes that consume much of practicing engineers' time. Despite these shared challenges across engineering disciplines, no benchmark currently captures the unique demands of engineering design work. In this work, we introduce EngDesign, an Engineering Design benchmark that evaluates LLMs' abilities to perform practical design tasks across nine engineering domains. Unlike existing benchmarks that focus on factual recall or question answering, EngDesign uniquely emphasizes LLMs' ability to synthesize domain knowledge, reason under constraints, and generate functional, objective-oriented engineering designs. Each task in EngDesign represents a real-world engineering design problem, accompanied by a detailed task description specifying design goals, constraints, and performance requirements. EngDesign pioneers a simulation-based evaluation paradigm that moves beyond textbook knowledge to assess genuine engineering design capabilities and shifts evaluation from static answer checking to dynamic, simulation-driven functional verification, marking a crucial step toward realizing the vision of engineering Artificial General Intelligence (AGI).",
+  "keywords": "LLM benchmark, engineering design, large language models, simulation-based evaluation, engineering AGI",
+  "sameAs": [
+    "https://arxiv.org/abs/2509.16204",
+    "https://www.semanticscholar.org/paper/db4dfdd1bed4768f051d3c08b9ae2a2c171e5eaf",
+    "https://agi4engineering.github.io/Eng-Design/",
+    "https://huggingface.co/datasets/opt1zer/EngDesign"
+  ],
+  "image": "https://ayushbarik.github.io/assets/EngDesign.png",
+  "isPartOf": {
+    "@type": "PublicationEvent",
+    "name": "Advances in Neural Information Processing Systems (NeurIPS 2025), Datasets and Benchmarks Track"
+  }
+}
+  </script>
+
+  <link rel="stylesheet" href="../../css/styles.css?v=34">
+  <link rel="icon" href="../../assets/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../assets/favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="../../assets/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../../assets/favicon_io/apple-touch-icon.png">
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="../../index.html">Ayush Barik</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../../Projects.html">Projects</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../classesnbooks.html">Classes</a></li>
+          <li><a href="../../assets/Ayush_Barik_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="full-width-section paper-page">
+    <article>
+      <h1>Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs</h1>
+      <p class="paper-venue">NeurIPS 2025 (Datasets &amp; Benchmarks Track)</p>
+      <p class="paper-authors">Xingang Guo<sup>1</sup>, Yaxin Li<sup>1</sup>, Xiangyi Kong<sup>1</sup>, Yilan Jiang<sup>1</sup>, Xiayu Zhao<sup>1</sup>, Zhihua Gong<sup>1</sup>, Yufan Zhang<sup>1</sup>, Daixuan Li<sup>1</sup>, Tianle Sang<sup>1</sup>, Beixiao Zhu<sup>1</sup>, Gregory Jun<sup>1</sup>, Yingbing Huang<sup>1</sup>, Yiqi Liu<sup>1</sup>, Yuqi Xue<sup>1</sup>, Rahul Dev Kundu<sup>1</sup>, Qi Jian Lim<sup>1</sup>, Yizhou Zhao<sup>2</sup>, Luke Alexander Granger<sup>1</sup>, Mohamed Badr Younis<sup>1</sup>, Darioush Keivan<sup>1</sup>, Nippun Sabharwal<sup>1</sup>, Shreyanka Sinha<sup>1</sup>, Prakhar Agarwal<sup>1</sup>, Kojo Vandyck<sup>1</sup>, Hanlin Mai<sup>1</sup>, Zichen Wang<sup>1</sup>, Aditya Venkatesh<sup>1</sup>, <strong>Ayush Barik<sup>1</sup></strong>, Jiankun Yang<sup>1</sup>, Chongying Yue<sup>1</sup>, Jingjie He<sup>1</sup>, Libin Wang<sup>1</sup>, Licheng Xu<sup>1</sup>, Hao Chen<sup>1</sup>, Jinwen Wang<sup>1</sup>, Liujun Xu<sup>1</sup>, Rushabh Shetty<sup>1</sup>, Ziheng Guo<sup>1</sup>, Dahui Song<sup>1</sup>, Manvi Jha<sup>1</sup>, Weijie Liang<sup>1</sup>, Weiman Yan<sup>1</sup>, Bryan Zhang<sup>1</sup>, Sahil Bhandary Karnoor<sup>1</sup>, Jialiang Zhang<sup>1</sup>, Rutva Pandya<sup>1</sup>, Xinyi Gong<sup>1</sup>, Mithesh Ballae Ganesh<sup>1</sup>, Feize Shi<sup>1</sup>, Ruiling Xu<sup>1</sup>, Yifan Zhang<sup>1</sup>, Yanfeng Ouyang<sup>1</sup>, Lianhui Qin<sup>3</sup>, Elyse Rosenbaum<sup>1</sup>, Corey Snyder<sup>3</sup>, Peter Seiler<sup>4</sup>, Geir Dullerud<sup>1</sup>, Xiaojia Shelly Zhang<sup>1</sup>, Zuofu Cheng<sup>1</sup>, Pavan Kumar Hanumolu<sup>1</sup>, Jian Huang<sup>1</sup>, Mayank Kulkarni<sup>5</sup>, Mahdi Namazifar<sup>5</sup>, Huan Zhang<sup>1</sup>, Bin Hu<sup>1</sup></p>
+      <p class="paper-affiliations"><sup>1</sup>University of Illinois Urbana-Champaign (UIUC), <sup>2</sup>University of Pennsylvania, <sup>3</sup>UC San Diego, <sup>4</sup>University of Michigan, <sup>5</sup>Amazon AGI</p>
+      <div class="paper-actions">
+        <a class="arxiv-button" href="https://arxiv.org/abs/2509.16204" target="_blank" rel="noopener" aria-label="arXiv"><img src="../../assets/arxiv-logo.svg" alt="arXiv"></a>
+        <a class="link-button" href="../../assets/papers/engdesign.pdf" target="_blank" rel="noopener"><span>PDF</span></a>
+        <a class="link-button" href="https://agi4engineering.github.io/Eng-Design/" target="_blank" rel="noopener"><span>Project page</span></a>
+        <a class="link-button" href="https://huggingface.co/datasets/opt1zer/EngDesign" target="_blank" rel="noopener"><span>Dataset</span></a>
+        <a class="link-button" href="https://www.semanticscholar.org/paper/db4dfdd1bed4768f051d3c08b9ae2a2c171e5eaf" target="_blank" rel="noopener"><span>Semantic Scholar</span></a>
+      </div>
+
+      <img class="research-figure figure-engineering-agi" src="../../assets/EngDesign.png" alt="Design style evaluation pipeline: LLM responses, program-based simulation, performance check, evaluation results">
+
+      <h2>In short</h2>
+      <p>EngDesign is a benchmark that tests whether large language models (LLMs) can do real engineering design, not just answer textbook questions. Its tasks cover nine engineering domains, including electrical, mechanical, aerospace, civil and computer engineering, and each task states its design goals, constraints and performance requirements. Instead of comparing an answer to a key, EngDesign runs each model's design through simulation to check whether the design actually works.</p>
+
+      <h2>Abstract</h2>
+      <p>Modern engineering, spanning electrical, mechanical, aerospace, civil, and computer disciplines, stands as a cornerstone of human civilization and the foundation of our society. However, engineering design poses a fundamentally different challenge for large language models (LLMs) compared with traditional textbook-style problem solving or factual question answering. Although existing benchmarks have driven progress in areas such as language understanding, code synthesis, and scientific problem solving, real-world engineering design demands the synthesis of domain knowledge, navigation of complex trade-offs, and management of the tedious processes that consume much of practicing engineers&#x27; time. Despite these shared challenges across engineering disciplines, no benchmark currently captures the unique demands of engineering design work. In this work, we introduce EngDesign, an Engineering Design benchmark that evaluates LLMs&#x27; abilities to perform practical design tasks across nine engineering domains. Unlike existing benchmarks that focus on factual recall or question answering, EngDesign uniquely emphasizes LLMs&#x27; ability to synthesize domain knowledge, reason under constraints, and generate functional, objective-oriented engineering designs. Each task in EngDesign represents a real-world engineering design problem, accompanied by a detailed task description specifying design goals, constraints, and performance requirements. EngDesign pioneers a simulation-based evaluation paradigm that moves beyond textbook knowledge to assess genuine engineering design capabilities and shifts evaluation from static answer checking to dynamic, simulation-driven functional verification, marking a crucial step toward realizing the vision of engineering Artificial General Intelligence (AGI).</p>
+
+      <h2>Citation</h2>
+      <pre class="bibtex">@inproceedings{guo2025toward,
+  title={Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs},
+  author={Xingang Guo and Yaxin Li and Xiangyi Kong and Yilan Jiang and Xiayu Zhao and Zhihua Gong and Yufan Zhang and Daixuan Li and Tianle Sang and Beixiao Zhu and Gregory Jun and Yingbing Huang and Yiqi Liu and Yuqi Xue and Rahul Dev Kundu and Qi Jian Lim and Yizhou Zhao and Luke Alexander Granger and Mohamed Badr Younis and Darioush Keivan and Nippun Sabharwal and Shreyanka Sinha and Prakhar Agarwal and Kojo Vandyck and Hanlin Mai and Zichen Wang and Aditya Venkatesh and Ayush Barik and Jiankun Yang and Chongying Yue and Jingjie He and Libin Wang and Licheng Xu and Hao Chen and Jinwen Wang and Liujun Xu and Rushabh Shetty and Ziheng Guo and Dahui Song and Manvi Jha and Weijie Liang and Weiman Yan and Bryan Zhang and Sahil Bhandary Karnoor and Jialiang Zhang and Rutva Pandya and Xinyi Gong and Mithesh Ballae Ganesh and Feize Shi and Ruiling Xu and Yifan Zhang and Yanfeng Ouyang and Lianhui Qin and Elyse Rosenbaum and Corey Snyder and Peter Seiler and Geir Dullerud and Xiaojia Shelly Zhang and Zuofu Cheng and Pavan Kumar Hanumolu and Jian Huang and Mayank Kulkarni and Mahdi Namazifar and Huan Zhang and Bin Hu},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track},
+  year={2025}
+}</pre>
+    </article>
+  </main>
+
+  <footer>
+    <a href="../../index.html#paper1">&larr; All research by Ayush Barik</a>
+  </footer>
+
+</body>
+</html>

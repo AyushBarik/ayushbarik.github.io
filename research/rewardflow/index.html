@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RewardFlow: Generate Images by Optimizing What You Reward</title>
+  <meta name="description" content="RewardFlow edits and generates images with pretrained diffusion and flow-matching models at inference time, with no inversion and no retraining. It steers sampling with Langevin dynamics guided by several differentiable rewards at once: semantic alignment, perceptual fidelity, localized...">
+  <meta name="keywords" content="image editing, text-to-image, diffusion models, flow matching, reward guidance, Langevin dynamics, inference-time steering">
+  <link rel="canonical" href="https://ayushbarik.github.io/research/rewardflow/">
+
+  <!-- Bibliographic metadata read by Google Scholar and reference managers -->
+  <meta name="citation_title" content="RewardFlow: Generate Images by Optimizing What You Reward">
+  <meta name="citation_author" content="Onkar Kishor Susladkar">
+  <meta name="citation_author" content="Dong-Hwan Jang">
+  <meta name="citation_author" content="Tushar Prakash">
+  <meta name="citation_author" content="Adheesh Sunil Juvekar">
+  <meta name="citation_author" content="Vedant Shah">
+  <meta name="citation_author" content="Ayush Barik">
+  <meta name="citation_author" content="Nabeel Bashir">
+  <meta name="citation_author" content="Muntasir Wahed">
+  <meta name="citation_author" content="Ritish Shrirao">
+  <meta name="citation_author" content="Ismini Lourentzou">
+  <meta name="citation_publication_date" content="2026/04/09">
+  <meta name="citation_pdf_url" content="https://ayushbarik.github.io/assets/papers/rewardflow.pdf">
+  <meta name="citation_abstract_html_url" content="https://ayushbarik.github.io/research/rewardflow/">
+  <meta name="citation_arxiv_id" content="2604.08536">
+  <meta name="citation_conference_title" content="IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026)">
+
+  <!-- Link previews -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="RewardFlow: Generate Images by Optimizing What You Reward">
+  <meta property="og:description" content="RewardFlow edits and generates images with pretrained diffusion and flow-matching models at inference time, with no inversion and no retraining. It steers sampling with Langevin dynamics guided by several differentiable rewards at once: semantic alignment, perceptual fidelity, localized...">
+  <meta property="og:url" content="https://ayushbarik.github.io/research/rewardflow/">
+  <meta property="og:image" content="https://ayushbarik.github.io/assets/rewardflow.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "RewardFlow: Generate Images by Optimizing What You Reward",
+  "name": "RewardFlow: Generate Images by Optimizing What You Reward",
+  "url": "https://ayushbarik.github.io/research/rewardflow/",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Onkar Kishor Susladkar"
+    },
+    {
+      "@type": "Person",
+      "name": "Dong-Hwan Jang"
+    },
+    {
+      "@type": "Person",
+      "name": "Tushar Prakash"
+    },
+    {
+      "@type": "Person",
+      "name": "Adheesh Sunil Juvekar"
+    },
+    {
+      "@type": "Person",
+      "name": "Vedant Shah"
+    },
+    {
+      "@type": "Person",
+      "name": "Ayush Barik"
+    },
+    {
+      "@type": "Person",
+      "name": "Nabeel Bashir"
+    },
+    {
+      "@type": "Person",
+      "name": "Muntasir Wahed"
+    },
+    {
+      "@type": "Person",
+      "name": "Ritish Shrirao"
+    },
+    {
+      "@type": "Person",
+      "name": "Ismini Lourentzou"
+    }
+  ],
+  "datePublished": "2026-04-09",
+  "abstract": "We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow unifies complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference, and further introduces a differentiable VQA-based reward that provides fine-grained semantic supervision through language-vision reasoning. To coordinate these heterogeneous objectives, we design a prompt-aware adaptive policy that extracts semantic primitives from the instruction, infers edit intent, and dynamically modulates reward weights and step sizes throughout sampling. Across several image editing and compositional generation benchmarks, RewardFlow delivers state-of-the-art edit fidelity and compositional alignment.",
+  "keywords": "image editing, text-to-image, diffusion models, flow matching, reward guidance, Langevin dynamics, inference-time steering",
+  "sameAs": [
+    "https://arxiv.org/abs/2604.08536",
+    "https://www.semanticscholar.org/paper/9db9820fbe7f2d8a261b9ac44b7b85f38dc7c4cd",
+    "https://plan-lab.github.io/rewardflow"
+  ],
+  "image": "https://ayushbarik.github.io/assets/rewardflow.png",
+  "isPartOf": {
+    "@type": "PublicationEvent",
+    "name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026)"
+  }
+}
+  </script>
+
+  <link rel="stylesheet" href="../../css/styles.css?v=34">
+  <link rel="icon" href="../../assets/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../assets/favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="../../assets/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../../assets/favicon_io/apple-touch-icon.png">
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="../../index.html">Ayush Barik</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../../Projects.html">Projects</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../classesnbooks.html">Classes</a></li>
+          <li><a href="../../assets/Ayush_Barik_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="full-width-section paper-page">
+    <article>
+      <h1>RewardFlow: Generate Images by Optimizing What You Reward</h1>
+      <p class="paper-venue">CVPR 2026</p>
+      <p class="paper-authors">Onkar Kishor Susladkar<sup>1</sup>, Dong-Hwan Jang<sup>1</sup>, Tushar Prakash<sup>2</sup>, Adheesh Sunil Juvekar<sup>1</sup>, Vedant Shah<sup>1</sup>, <strong>Ayush Barik<sup>1</sup></strong>, Nabeel Bashir<sup>1</sup>, Muntasir Wahed<sup>1</sup>, Ritish Shrirao<sup>1</sup>, Ismini Lourentzou<sup>1</sup></p>
+      <p class="paper-affiliations"><sup>1</sup>University of Illinois Urbana-Champaign (UIUC), <sup>2</sup>Sony</p>
+      <div class="paper-actions">
+        <a class="arxiv-button" href="https://arxiv.org/abs/2604.08536" target="_blank" rel="noopener" aria-label="arXiv"><img src="../../assets/arxiv-logo.svg" alt="arXiv"></a>
+        <a class="link-button" href="../../assets/papers/rewardflow.pdf" target="_blank" rel="noopener"><span>PDF</span></a>
+        <a class="link-button" href="https://plan-lab.github.io/rewardflow" target="_blank" rel="noopener"><span>Project page</span></a>
+        <a class="link-button" href="https://www.semanticscholar.org/paper/9db9820fbe7f2d8a261b9ac44b7b85f38dc7c4cd" target="_blank" rel="noopener"><span>Semantic Scholar</span></a>
+      </div>
+
+      <img class="research-figure figure-rewardflow" src="../../assets/rewardflow.png" alt="RewardFlow teaser figure">
+
+      <h2>In short</h2>
+      <p>RewardFlow edits and generates images with pretrained diffusion and flow-matching models at inference time, with no inversion and no retraining. It steers sampling with Langevin dynamics guided by several differentiable rewards at once: semantic alignment, perceptual fidelity, localized grounding, object consistency and human preference, plus a new VQA-based reward that gives fine-grained feedback on whether the image matches the instruction. A prompt-aware policy reads the instruction, infers what kind of edit is wanted, and adjusts each reward's weight and the step size during sampling. RewardFlow reaches state-of-the-art edit fidelity and compositional alignment on several image editing and compositional generation benchmarks.</p>
+
+      <h2>Abstract</h2>
+      <p>We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow unifies complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference, and further introduces a differentiable VQA-based reward that provides fine-grained semantic supervision through language-vision reasoning. To coordinate these heterogeneous objectives, we design a prompt-aware adaptive policy that extracts semantic primitives from the instruction, infers edit intent, and dynamically modulates reward weights and step sizes throughout sampling. Across several image editing and compositional generation benchmarks, RewardFlow delivers state-of-the-art edit fidelity and compositional alignment.</p>
+
+      <h2>Citation</h2>
+      <pre class="bibtex">@inproceedings{susladkar2026rewardflow,
+  title={RewardFlow: Generate Images by Optimizing What You Reward},
+  author={Onkar Kishor Susladkar and Dong-Hwan Jang and Tushar Prakash and Adheesh Sunil Juvekar and Vedant Shah and Ayush Barik and Nabeel Bashir and Muntasir Wahed and Ritish Shrirao and Ismini Lourentzou},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</pre>
+    </article>
+  </main>
+
+  <footer>
+    <a href="../../index.html#paper2">&larr; All research by Ayush Barik</a>
+  </footer>
+
+</body>
+</html>
