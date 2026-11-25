@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "sources": [
   "gs",
   "s2",
   "oa"
  ],
  "totals": {
-  "citations": 54,
+  "citations": 55,
   "h": 3,
   "i10": 1
  },
@@ -31,9 +31,9 @@
   },
   "paper1": {
    "gs": 18,
-   "s2": 33,
+   "s2": 34,
    "oa": 33,
-   "combined": 45
+   "combined": 46
   }
  },
  "gs_profile": {
@@ -96,6 +96,11 @@
     }
    ],
    "paper1": [
+    {
+     "title": "OWE-Bench: A long-horizon benchmark for measuring real-world engineering",
+     "doi": null,
+     "arxiv": "2611.30017"
+    },
     {
      "title": "Mechanistic Critics for Sample-Efficient NPU Design-Space Exploration",
      "doi": null,
