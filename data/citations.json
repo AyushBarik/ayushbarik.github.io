@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "sources": [
   "gs",
   "s2",
   "oa"
  ],
  "totals": {
-  "citations": 55,
+  "citations": 56,
   "h": 3,
   "i10": 1
  },
@@ -25,14 +25,14 @@
   },
   "paper2": {
    "gs": 2,
-   "s2": 5,
-   "oa": 1,
-   "combined": 5
+   "s2": 6,
+   "oa": 4,
+   "combined": 6
   },
   "paper1": {
    "gs": 18,
    "s2": 34,
-   "oa": 33,
+   "oa": 35,
    "combined": 46
   }
  },
@@ -69,6 +69,11 @@
     }
    ],
    "paper2": [
+    {
+     "title": "PromptSMC: Enabling Particle Exploration in Flow Matching via LLM-Based Prompt Rejuvenation",
+     "doi": null,
+     "arxiv": "2611.31471"
+    },
     {
      "title": "From Tokens to Trajectories: Parameter-Efficient Continuous Adaptation of Unified Multimodal Models",
      "doi": null,
@@ -283,8 +288,20 @@
    ],
    "paper2": [
     {
+     "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
+     "doi": "https://doi.org/10.48550/arxiv.2609.04190"
+    },
+    {
+     "title": "FASTER: Fast Adjoint Stochastic Transport for Endpoint Refinement in Reward-Guided Image Editing",
+     "doi": "https://doi.org/10.48550/arxiv.2610.04538"
+    },
+    {
      "title": "KINESYS: Test-Time Adaptation for Reference-Based Effect Editing in Images",
      "doi": "https://doi.org/10.48550/arxiv.2610.33292"
+    },
+    {
+     "title": "From Tokens to Trajectories: Parameter-Efficient Continuous Adaptation of Unified Multimodal Models",
+     "doi": "https://doi.org/10.48550/arxiv.2611.05451"
     }
    ],
    "paper1": [
@@ -293,12 +310,20 @@
      "doi": "https://doi.org/10.48550/arxiv.2601.18744"
     },
     {
+     "title": "OC-Distill: Ontology-aware Contrastive Learning with Cross-Modal Distillation for ICU Risk Prediction",
+     "doi": "https://doi.org/10.48550/arxiv.2604.16878"
+    },
+    {
      "title": "Grounding LLMs in Scientific Discovery via Embodied Actions",
      "doi": "https://doi.org/10.48550/arxiv.2602.20639"
     },
     {
      "title": "Large language model assisted human-AI collaborative development of analytical inverse kinematics solvers for robot manipulators",
      "doi": "https://doi.org/10.1016/j.mechmachtheory.2026.106392"
+    },
+    {
+     "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
+     "doi": "https://doi.org/10.18653/2026.findings-emnlp.1674"
     },
     {
      "title": "Engineering Reasoning and Instruction (ERI) benchmark: a large taxonomy-driven dataset for foundation models and agents",
@@ -321,16 +346,16 @@
      "doi": "https://doi.org/10.48550/arxiv.2604.12290"
     },
     {
+     "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
+     "doi": "https://doi.org/10.48550/arxiv.2607.14896"
+    },
+    {
      "title": "AnalogSAGE: Self-evolving Analog Design Multi-Agents with Stratified Memory and Grounded Experience",
      "doi": "https://doi.org/10.48550/arxiv.2512.22435"
     },
     {
      "title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis",
      "doi": "https://doi.org/10.48550/arxiv.2605.28978"
-    },
-    {
-     "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
-     "doi": "https://doi.org/10.48550/arxiv.2607.14896"
     },
     {
      "title": "Language models can notice an impossible engineering problem yet still report it as solved",
@@ -359,6 +384,10 @@
     {
      "title": "PLE: Physical-Engineering's Last Exam",
      "doi": "https://doi.org/10.48550/arxiv.2610.30537"
+    },
+    {
+     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+     "doi": "https://doi.org/10.48550/arxiv.2611.18856"
     },
     {
      "title": "Automating Automation: Large Language Models for Control Design [President’s Message]",
@@ -407,10 +436,6 @@
     {
      "title": "IndustrialKnowEval: A Benchmark for Evaluating Multi-Level Industrial Knowledge in LLMs",
      "doi": "https://doi.org/10.48550/arxiv.2611.20695"
-    },
-    {
-     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
-     "doi": "https://doi.org/10.48550/arxiv.2611.18856"
     },
     {
      "title": "Mechanistic Critics for Sample-Efficient NPU Design-Space Exploration",
