@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "sources": [
   "gs",
   "s2",
@@ -32,7 +32,7 @@
   "paper1": {
    "gs": 18,
    "s2": 34,
-   "oa": 35,
+   "oa": 36,
    "combined": 46
   }
  },
@@ -322,16 +322,16 @@
      "doi": "https://doi.org/10.1016/j.mechmachtheory.2026.106392"
     },
     {
-     "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
-     "doi": "https://doi.org/10.18653/2026.findings-emnlp.1674"
-    },
-    {
      "title": "Engineering Reasoning and Instruction (ERI) benchmark: a large taxonomy-driven dataset for foundation models and agents",
      "doi": "https://doi.org/10.1016/j.cie.2026.112333"
     },
     {
      "title": "FORGE: Fine-grained multimodal evaluation for manufacturing quality assurance",
      "doi": "https://doi.org/10.18653/2026.findings-emnlp.888"
+    },
+    {
+     "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
+     "doi": "https://doi.org/10.18653/2026.findings-emnlp.1674"
     },
     {
      "title": "Alleviating Overconfidence in Long-Tailed Time Series Classification with Hierarchical Reverse Distillation",
@@ -366,6 +366,18 @@
      "doi": "https://doi.org/10.48550/arxiv.2605.09481"
     },
     {
+     "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
+     "doi": "https://doi.org/10.48550/arxiv.2610.26861"
+    },
+    {
+     "title": "PLE: Physical-Engineering's Last Exam",
+     "doi": "https://doi.org/10.48550/arxiv.2610.30537"
+    },
+    {
+     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+     "doi": "https://doi.org/10.48550/arxiv.2611.18856"
+    },
+    {
      "title": "FlowPilot: A Multi-Agent AI System for Continuous Flow Chemistry Process Design",
      "doi": "https://doi.org/10.26434/chemrxiv.15003445/v1"
     },
@@ -378,16 +390,8 @@
      "doi": "https://doi.org/10.48550/arxiv.2608.14615"
     },
     {
-     "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
-     "doi": "https://doi.org/10.48550/arxiv.2610.26861"
-    },
-    {
-     "title": "PLE: Physical-Engineering's Last Exam",
-     "doi": "https://doi.org/10.48550/arxiv.2610.30537"
-    },
-    {
-     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
-     "doi": "https://doi.org/10.48550/arxiv.2611.18856"
+     "title": "Vibe Building",
+     "doi": "https://doi.org/10.48550/arxiv.2610.08156"
     },
     {
      "title": "Automating Automation: Large Language Models for Control Design [President’s Message]",
@@ -418,10 +422,6 @@
      "doi": "https://doi.org/10.48550/arxiv.2610.03631"
     },
     {
-     "title": "Vibe Building",
-     "doi": "https://doi.org/10.48550/arxiv.2610.08156"
-    },
-    {
      "title": "FDE-Bench: Evaluating End-to-End Delivery from Underspecified Real-World Business Requests",
      "doi": "https://doi.org/10.48550/arxiv.2610.14539"
     },
@@ -444,6 +444,10 @@
     {
      "title": "RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop",
      "doi": "https://doi.org/10.48550/arxiv.2611.23855"
+    },
+    {
+     "title": "OWE-Bench: A long-horizon benchmark for measuring real-world engineering",
+     "doi": "https://doi.org/10.48550/arxiv.2611.30017"
     }
    ]
   },
