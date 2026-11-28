@@ -24,7 +24,7 @@ PAPERS = [
         "year": "2026",
         "arxiv": "2611.32938",
         "pdf": "https://arxiv.org/pdf/2611.32938",
-        "s2": None,
+        "s2": "https://www.semanticscholar.org/paper/e02603ed05340203152d1d54a45e0154a9cde486",
         "extra_links": [],
         "authors": [("Ayush Barik", "1"), ("Fan Lai", "1&dagger;"), ("Francis Yan", "1&dagger;")],
         "affiliations": "<sup>1</sup>University of Illinois Urbana-Champaign (UIUC), <sup>&dagger;</sup>Equal advising",
